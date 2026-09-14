@@ -4,7 +4,7 @@ import PageHero from "@/components/marketing/PageHero";
 import { Icon, icons } from "@/components/marketing/shared";
 
 const services = [
-  { name: "Main Application", status: "In Development", color: "var(--color-ng-amber)" },
+  { name: "Main Application", status: "Operational", color: "var(--color-ng-green)" },
   { name: "AI Anomaly Engine", status: "In Development", color: "var(--color-ng-amber)" },
   { name: "Hardware Gateway", status: "In Development", color: "var(--color-ng-amber)" },
   { name: "Access Log Database", status: "In Development", color: "var(--color-ng-amber)" },
