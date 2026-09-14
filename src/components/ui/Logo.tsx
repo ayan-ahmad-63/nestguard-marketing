@@ -14,8 +14,9 @@ const stackedSrc = typeof stackedImage === "string" ? stackedImage : (stackedIma
  * so we crop the padding away and size the logo to the artwork, not the canvas.
  */
 const SPEC = {
-  row: { src: rowSrc, minx: 0.069, miny: 0.38, cw: 0.869, ch: 0.256 },
-  stacked: { src: stackedSrc, minx: 0.216, miny: 0.282, cw: 0.57, ch: 0.364 },
+  mark: { src: markSrc, minx: 0.2324, miny: 0.2305, cw: 0.5400, ch: 0.5732 },
+  row: { src: rowSrc, minx: 0.0684, miny: 0.3799, cw: 0.8711, ch: 0.2578 },
+  stacked: { src: stackedSrc, minx: 0.2148, miny: 0.2822, cw: 0.5723, ch: 0.3643 },
 } as const;
 
 interface MarkProps {
@@ -25,20 +26,34 @@ interface MarkProps {
 
 /** Fingerprint-nest mark only. */
 export function LogoMark({ size = 32, className = "" }: MarkProps) {
+  const s = SPEC.mark;
+  const aspect = s.cw / s.ch;
+  const artH = size;
+  const artW = size * aspect;
+  const imgH = artH / s.ch;
+  const imgW = artW / s.cw;
+  const offsetX = (size - artW) / 2; // Center horizontally if artwork isn't perfectly square
+  
   return (
     <div
       role="img"
       aria-label="NestGuard Logo Mark"
-      className={`shrink-0 ${className}`}
-      style={{
-        width: size,
-        height: size,
-        backgroundImage: `url(${markSrc})`,
-        backgroundRepeat: "no-repeat",
-        backgroundSize: "420%",
-        backgroundPosition: "50% 38%",
-      }}
-    />
+      className={`relative overflow-hidden shrink-0 ${className}`}
+      style={{ width: size, height: size }}
+    >
+      <img
+        src={s.src}
+        alt="NestGuard Logo Mark"
+        style={{
+          position: "absolute",
+          width: imgW,
+          height: imgH,
+          left: -s.minx * imgW + offsetX,
+          top: -s.miny * imgH,
+          maxWidth: "none",
+        }}
+      />
+    </div>
   );
 }
 
