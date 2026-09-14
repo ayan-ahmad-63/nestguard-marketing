@@ -121,7 +121,7 @@ export default function Landing() {
                 <div className="w-3 h-3 rounded-full bg-[#27C93F]" />
               </div>
               <div className="absolute left-1/2 -translate-x-1/2 h-6 rounded-md bg-white/5 border border-white/5 px-4 flex items-center">
-                <span className="font-mono text-[11px] text-ng-muted">app.nestguard.io / console</span>
+                <span className="font-mono text-[11px] text-ng-muted">app.nestguard.live / console</span>
               </div>
             </div>
 
