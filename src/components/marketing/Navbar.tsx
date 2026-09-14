@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { LogoLockup } from "@/components/ui/Logo";
+import Image from "next/image";
 import { Icon, icons } from "./shared";
 import { getLoginUrl } from "@/lib/env";
 
@@ -37,7 +37,7 @@ export default function Navbar() {
         }
       >
         <Link href="/" className="flex items-center shrink-0 hover:opacity-80 transition-opacity">
-          <LogoLockup variant="row" height={26} />
+          <Image src="/logo-row.png" alt="NestGuard" width={892} height={264} className="h-9 w-auto shrink-0 object-contain" priority />
         </Link>
 
         <div className="hidden md:flex items-center gap-8">

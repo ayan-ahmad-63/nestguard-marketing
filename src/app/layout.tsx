@@ -6,9 +6,7 @@ export const metadata: Metadata = {
   title: "NestGuard — Next-generation Hostel Security",
   description:
     "Replace archaic sign-in registers with cryptographic biometric authentication. Real-time monitoring, AI anomaly detection, and zero friction.",
-  icons: {
-    icon: "/icon.png",
-  },
+
   openGraph: {
     title: "NestGuard — Next-generation Hostel Security",
     description:

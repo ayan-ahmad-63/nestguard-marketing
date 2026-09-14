@@ -1,5 +1,5 @@
 "use client";
-import { LogoMark } from "@/components/ui/Logo";
+import Image from "next/image";
 import { PrimaryBtn } from "./shared";
 import { getLoginUrl } from "@/lib/env";
 
@@ -9,7 +9,7 @@ export default function CTABand() {
       <div className="rounded-[3rem] border border-ng-border px-8 py-20 text-center relative overflow-hidden bg-ng-panel shadow-sm">
         <div className="absolute inset-0 opacity-40" style={{ background: "radial-gradient(circle at center, var(--color-ng-blue), transparent 60%)" }} />
         <div className="relative z-10 flex flex-col items-center">
-          <LogoMark size={64} />
+          <Image src="/logo-mark.png" alt="NestGuard Logo Mark" width={553} height={587} className="h-24 w-24 object-contain" />
           <h2 className="font-display font-medium text-[40px] md:text-[56px] tracking-tight mt-8 mb-4 max-w-2xl">
             Ready to secure your campus?
           </h2>

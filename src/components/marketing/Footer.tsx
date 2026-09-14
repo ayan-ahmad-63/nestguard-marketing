@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import { LogoLockup } from "@/components/ui/Logo";
+import Image from "next/image";
 import { getLoginUrl } from "@/lib/env";
 
 export default function Footer() {
@@ -9,7 +9,7 @@ export default function Footer() {
       <div className="mx-auto max-w-6xl px-5 sm:px-8 py-16 grid md:grid-cols-5 gap-10">
         {/* Logo + tagline */}
         <div className="md:col-span-2">
-          <LogoLockup variant="row" height={28} />
+          <Image src="/logo-row.png" alt="NestGuard" width={892} height={264} className="h-9 w-auto shrink-0 object-contain" />
           <p className="mt-6 text-sm leading-relaxed text-ng-secondary max-w-xs">
             Next-generation biometric access control for institutional security. Replace guesswork with verifiable, tamper-proof records.
           </p>
