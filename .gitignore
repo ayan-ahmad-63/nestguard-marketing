@@ -26,8 +26,8 @@ yarn-debug.log*
 yarn-error.log*
 
 # local env files — do NOT commit real values
-.env*.local
-.env
+.env*
+!.env*.example
 
 # vercel
 .vercel
