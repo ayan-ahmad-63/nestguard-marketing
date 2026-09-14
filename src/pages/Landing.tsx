@@ -74,7 +74,8 @@ export default function Landing() {
             </div>
             
             <h1 className="font-display font-medium leading-[1.05] tracking-tight text-[40px] sm:text-[56px] md:text-[72px] max-w-4xl relative z-10">
-              Hostel security that actually knows{" "}
+              Hostel security <br />
+              that actually knows <br />
               <span 
                 className="text-transparent bg-clip-text animate-text-gradient" 
                 style={{ backgroundImage: "linear-gradient(90deg, var(--color-ng-orange), #FFB067, var(--color-ng-orange-deep), var(--color-ng-orange))" }}
