@@ -9,19 +9,16 @@
  *   - Production: https://app.nestguard.live
  */
 export function getLoginUrl(): string {
-  const defaultUrl =
-    process.env.NODE_ENV === "development"
-      ? "http://localhost:3000"
-      : "https://app.nestguard.live";
-  const base = process.env.NEXT_PUBLIC_APP_URL?.replace(/\/$/, "") || defaultUrl;
+  if (process.env.NODE_ENV === "production") {
+    return "https://app.nestguard.live/login";
+  }
+  const base = process.env.NEXT_PUBLIC_APP_URL?.replace(/\/$/, "") || "http://localhost:3000";
   return `${base}/login`;
 }
 
 export function getAppUrl(): string {
-  const defaultUrl =
-    process.env.NODE_ENV === "development"
-      ? "http://localhost:3000"
-      : "https://app.nestguard.live";
-  return process.env.NEXT_PUBLIC_APP_URL?.replace(/\/$/, "") || defaultUrl;
+  if (process.env.NODE_ENV === "production") {
+    return "https://app.nestguard.live";
+  }
+  return process.env.NEXT_PUBLIC_APP_URL?.replace(/\/$/, "") || "http://localhost:3000";
 }
-
