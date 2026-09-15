@@ -37,43 +37,76 @@ export default function PlatformPage() {
     <MarketingShell>
       <PageHero
         eyebrow="Platform"
-        title="One Unified Command Center."
-        subtitle="NestGuard OS delivers unparalleled visibility across your entire campus. Monitor real-time access, manage visitor workflows, and detect anomalies instantly from a single, hyper-responsive pane of glass."
+        title={
+          <>
+            One Unified <br className="hidden md:block" />
+            <em className="font-serif italic font-light text-transparent bg-clip-text animate-text-gradient" style={{ backgroundImage: "linear-gradient(90deg, var(--color-ng-orange), #FFB067, var(--color-ng-orange-deep), var(--color-ng-orange))" }}>Command Center.</em>
+          </>
+        }
+        subtitle="Real-time campus visibility. Monitor access, manage visitors, and detect anomalies from a single unified dashboard."
+        showCanvas={true}
         variant="platform"
+        sectionLinks={[
+          { label: "Dashboard", href: "#dashboard" },
+          { label: "Core Capabilities", href: "#capabilities" }
+        ]}
       />
 
-      <section className="mx-auto max-w-6xl px-5 sm:px-8 pt-32 md:pt-40 pb-32">
-        <div className="flex flex-col gap-32 md:gap-48">
-          {features.map((f, i) => (
-            <div key={i} className="flex flex-col items-center text-center">
-              <div className="w-16 h-16 rounded-2xl bg-ng-elevated border border-ng-border flex items-center justify-center mb-6 shadow-lg" style={{ color: "#FF6B00" }}>
-                <Icon path={f.icon} size={32} />
-              </div>
-              <h3 className="font-display font-medium text-3xl md:text-4xl tracking-tight mb-4 max-w-2xl">{f.title}</h3>
-              <p className="text-ng-secondary text-lg leading-relaxed max-w-2xl mb-12">{f.desc}</p>
+      {/* 1. Primary Feature Block */}
+      <section id="dashboard" className="border-y border-ng-border/50 bg-ng-panel/30 scroll-mt-24">
+        <div className="mx-auto max-w-6xl px-5 sm:px-8 grid md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-ng-border/50">
+          <div className="py-20 md:py-32 md:pr-16 flex flex-col justify-center">
+            <p className="font-mono text-sm text-ng-orange tracking-widest uppercase mb-6">Centralized Dashboard</p>
+            <h2 className="font-display font-medium text-2xl md:text-3xl lg:text-4xl leading-tight mb-8">
+              A single pane of glass for every gate on campus.
+            </h2>
+            <p className="text-ng-secondary text-lg leading-relaxed font-light">
+              The live access feed shows real-time entry and exit events as they happen. Gate status, occupancy counts, and critical alerts are all visible at a glance — no page refreshes, no manual checks.
+            </p>
+          </div>
+          
+          <div className="py-20 md:py-32 md:pl-16 flex items-center justify-center">
+            {/* Dashboard Mockup Panel */}
+            <div className="w-full rounded-2xl border border-ng-border bg-ng-panel/80 p-6 shadow-2xl relative overflow-hidden group hover:border-ng-orange/50 transition-colors duration-500">
+              <div className="absolute top-0 right-0 w-48 h-48 bg-ng-orange/10 blur-[80px] rounded-full pointer-events-none group-hover:bg-ng-orange/20 transition-colors duration-500" />
               
-              {/* Placeholder panel mimicking the dashboard mockup style */}
-              <div className="w-full max-w-4xl rounded-2xl border border-ng-border bg-ng-panel p-6 md:p-10 shadow-2xl relative overflow-hidden">
-                <div className="absolute top-0 right-0 w-64 h-64 bg-ng-orange/5 blur-[100px] rounded-full pointer-events-none" />
-                <div className="absolute bottom-0 left-0 w-64 h-64 bg-ng-blue/5 blur-[100px] rounded-full pointer-events-none" />
-                
-                <div className="w-full relative z-10">
-                  <div className="flex items-center justify-between mb-8">
-                    <div className="h-4 w-1/4 bg-ng-border rounded-full" />
-                    <div className="flex gap-2">
-                      <div className="h-4 w-4 bg-ng-border rounded-full" />
-                      <div className="h-4 w-4 bg-ng-border rounded-full" />
-                      <div className="h-4 w-4 bg-ng-border rounded-full" />
-                    </div>
-                  </div>
-                  <div className="h-3 w-full bg-ng-border/50 rounded-full mb-4" />
-                  <div className="h-3 w-[85%] bg-ng-border/50 rounded-full mb-8" />
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                    <div className="h-24 bg-ng-elevated rounded-xl border border-ng-border" />
-                    <div className="h-24 bg-ng-elevated rounded-xl border border-ng-border" />
-                    <div className="h-24 bg-ng-elevated rounded-xl border border-ng-border" />
+              <div className="w-full relative z-10">
+                <div className="flex items-center justify-between mb-8">
+                  <div className="h-3 w-1/3 bg-ng-border/80 rounded-full" />
+                  <div className="flex gap-2">
+                    <div className="h-3 w-3 bg-ng-border/60 rounded-full" />
+                    <div className="h-3 w-3 bg-ng-border/60 rounded-full" />
+                    <div className="h-3 w-3 bg-ng-border/60 rounded-full" />
                   </div>
                 </div>
+                <div className="h-2 w-full bg-ng-border/40 rounded-full mb-4" />
+                <div className="h-2 w-[85%] bg-ng-border/40 rounded-full mb-8" />
+                <div className="grid grid-cols-2 gap-4">
+                  <div className="h-20 bg-ng-elevated/50 rounded-xl border border-ng-border/50" />
+                  <div className="h-20 bg-ng-elevated/50 rounded-xl border border-ng-border/50" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 2. Platform Capabilities Grid */}
+      <section id="capabilities" className="mx-auto max-w-6xl px-5 sm:px-8 pt-32 pb-32 scroll-mt-24">
+        <p className="font-mono text-sm text-ng-orange tracking-widest uppercase mb-12 text-center md:text-left">Core Capabilities</p>
+        
+        <div className="grid md:grid-cols-2 gap-6">
+          {features.slice(1).map((f, i) => (
+            <div key={i} className="group relative bg-ng-panel/30 border border-ng-border rounded-2xl p-8 md:p-10 hover:border-ng-orange/50 transition-colors duration-500 overflow-hidden">
+              {/* Subtle hover gradient */}
+              <div className="absolute inset-0 bg-gradient-to-br from-ng-orange/0 to-ng-orange/0 group-hover:from-ng-orange/5 group-hover:to-transparent transition-colors duration-700 pointer-events-none" />
+              
+              <div className="relative z-10">
+                <div className="w-12 h-12 rounded-xl bg-ng-elevated border border-ng-border flex items-center justify-center mb-6 shadow-sm text-ng-orange group-hover:scale-110 group-hover:border-ng-orange/30 transition-all duration-300">
+                  <Icon path={f.icon} size={24} />
+                </div>
+                <h3 className="font-display font-medium text-2xl tracking-tight mb-4">{f.title}</h3>
+                <p className="text-ng-secondary text-base leading-relaxed font-light">{f.desc}</p>
               </div>
             </div>
           ))}

@@ -84,7 +84,7 @@ export default function HeroCanvas({ variant = "default", align = "center" }: { 
       time += 0.01;
 
       // Base translation
-      const centerX = canvas.width / 2;
+      const centerX = align === "left" ? canvas.width * 0.75 : canvas.width / 2;
       const centerY = canvas.height / 2;
 
       if (variant === "platform" || variant === "default") {

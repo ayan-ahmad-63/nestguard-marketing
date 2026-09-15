@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap');
+﻿@import url('https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap');
 @import 'tailwindcss';
 
 @theme {
@@ -20,7 +20,7 @@
   --color-ng-red: #FF5A50;
 }
 
-/* ── Theme tokens ─────────────────────────────────────────────
+/* â”€â”€ Theme tokens â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
    :root = dark (default). .light on <html> = light theme.        */
 :root {
   --ng-bg: #0C0A18;
@@ -113,7 +113,7 @@ body {
   box-shadow: var(--ng-frame-shadow);
 }
 
-/* ── Fancy Theme Switch CSS ──────────────────────────────────── */
+/* â”€â”€ Fancy Theme Switch CSS â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .theme-switch {
   --toggle-size: 10px;
   --container-width: 5.625em;
@@ -611,64 +611,3 @@ body {
     opacity: 0.3;
     transform: scale(1);
   }
-  50% {
-    opacity: 1;
-    transform: scale(1.2);
-  }
-}
-
-@keyframes cometMove {
-  0% {
-    transform: translateX(0) translateY(0) rotate(-45deg) scale(1);
-    opacity: 0;
-  }
-  10% {
-    opacity: 1;
-  }
-  90% {
-    opacity: 1;
-  }
-  100% {
-    transform: translateX(200px) translateY(200px) rotate(-45deg) scale(0.2);
-    opacity: 0;
-  }
-}
-
-.theme-switch__checkbox:checked
-  + .theme-switch__container
-  .theme-switch__stars-cluster {
-  opacity: 1;
-}
-
-.theme-switch__checkbox:checked
-  + .theme-switch__container
-  .theme-switch__aurora {
-  opacity: 1;
-  animation: auroraWave 8s linear infinite;
-}
-
-.theme-switch__checkbox:checked
-  + .theme-switch__container
-  .theme-switch__comets {
-  opacity: 1;
-}
-
-@keyframes auroraWave {
-  0% {
-    transform: translateY(-100%) translateX(-50%);
-  }
-  100% {
-    transform: translateY(-100%) translateX(50%);
-  }
-}
-
-@keyframes text-gradient {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-
-.animate-text-gradient {
-  animation: text-gradient 5s ease infinite;
-  background-size: 200% auto;
-}

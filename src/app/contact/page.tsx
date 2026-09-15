@@ -10,9 +10,9 @@ export default function ContactPage() {
           {/* Left Side - Info & Cards */}
           <div className="flex flex-col gap-16">
             <div>
-              <span className="font-display font-medium text-[16px] md:text-[18px] text-ng-text mb-6 block">
+              <p className="font-mono text-sm text-ng-orange tracking-widest uppercase mb-8 relative z-10">
                 Contact
-              </span>
+              </p>
               <h1 className="font-display font-medium leading-[1.1] tracking-tight text-5xl sm:text-6xl md:text-7xl max-w-xl mb-6">
                 Let's upgrade your <br/>
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-ng-orange to-amber-500">
