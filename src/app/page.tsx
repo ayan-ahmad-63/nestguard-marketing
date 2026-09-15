@@ -1,4 +1,3 @@
-"use client";
 import MarketingShell from "@/components/marketing/MarketingShell";
 import CTABand from "@/components/marketing/CTABand";
 import { Icon, icons, PrimaryBtn, SecondaryBtn } from "@/components/marketing/shared";
@@ -93,7 +92,7 @@ export default function Landing() {
           <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto">
             {/* Cross-domain navigation: plain anchor, not next/link */}
             <div className="w-full sm:w-auto"><PrimaryBtn href={loginUrl} size="lg">Deploy NestGuard</PrimaryBtn></div>
-            <div className="w-full sm:w-auto"><SecondaryBtn onClick={() => document.getElementById("platform")?.scrollIntoView({behavior: "smooth"})}>Explore Platform</SecondaryBtn></div>
+            <div className="w-full sm:w-auto"><SecondaryBtn href="#platform">Explore Platform</SecondaryBtn></div>
           </div>
         </section>
 

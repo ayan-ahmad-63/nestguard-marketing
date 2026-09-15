@@ -1,19 +1,8 @@
-"use client";
-import { useState } from "react";
 import MarketingShell from "@/components/marketing/MarketingShell";
 import PageHero from "@/components/marketing/PageHero";
 import { Icon, icons } from "@/components/marketing/shared";
 
 export default function ContactPage() {
-  const [submitted, setSubmitted] = useState(false);
-
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    const formData = new FormData(e.currentTarget);
-    console.log("Contact form submission:", Object.fromEntries(formData));
-    setSubmitted(true);
-  };
-
   return (
     <MarketingShell>
       <PageHero
@@ -22,16 +11,7 @@ export default function ContactPage() {
       />
 
       <section className="mx-auto max-w-3xl px-5 sm:px-8 pb-32">
-        {submitted ? (
-          <div className="rounded-[2.5rem] border border-ng-border bg-ng-panel p-14 text-center shadow-2xl">
-            <div className="w-20 h-20 rounded-full bg-green-500/10 border border-green-500/20 flex items-center justify-center mx-auto mb-8 shadow-inner">
-              <span className="text-green-500"><Icon path={icons.check} size={32} /></span>
-            </div>
-            <h3 className="font-display font-medium text-3xl mb-4">Message sent</h3>
-            <p className="text-ng-secondary text-lg">Thank you for your interest. We'll get back to you shortly.</p>
-          </div>
-        ) : (
-          <form onSubmit={handleSubmit} className="rounded-[2.5rem] border border-ng-border bg-ng-panel p-10 md:p-14 flex flex-col gap-8 shadow-2xl relative overflow-hidden">
+        <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" className="rounded-[2.5rem] border border-ng-border bg-ng-panel p-10 md:p-14 flex flex-col gap-8 shadow-2xl relative overflow-hidden">
             <div className="absolute top-0 right-0 w-64 h-64 bg-ng-orange/5 blur-[100px] rounded-full pointer-events-none" />
             
             <div className="relative z-10 grid md:grid-cols-2 gap-8">
@@ -89,7 +69,6 @@ export default function ContactPage() {
               </p>
             </div>
           </form>
-        )}
       </section>
     </MarketingShell>
   );

@@ -5,6 +5,7 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import "@/index.css";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://nestguard.live"),
   title: "NestGuard — Next-generation Hostel Security",
   description:
     "Replace archaic sign-in registers with cryptographic biometric authentication. Real-time monitoring, AI anomaly detection, and zero friction.",
@@ -14,6 +15,14 @@ export const metadata: Metadata = {
     description:
       "Biometric access control for university hostels. Real-time monitoring, AI anomaly detection, and permanent audit logging.",
     siteName: "NestGuard",
+    images: [
+      {
+        url: "/logo-row.png",
+        width: 1200,
+        height: 630,
+        alt: "NestGuard Logo",
+      },
+    ],
   },
 };
 
