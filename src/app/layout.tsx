@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://nestguard.live"),
   title: "NestGuard — Next-generation Hostel Security",
   description:
-    "Replace archaic sign-in registers with cryptographic biometric authentication. Real-time monitoring, AI anomaly detection, and zero friction.",
+    "Real-time monitoring, AI anomaly detection, and zero friction.",
 
   openGraph: {
     title: "NestGuard — Next-generation Hostel Security",

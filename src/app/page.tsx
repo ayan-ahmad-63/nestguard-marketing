@@ -1,6 +1,7 @@
 import MarketingShell from "@/components/marketing/MarketingShell";
 import CTABand from "@/components/marketing/CTABand";
 import { Icon, icons, PrimaryBtn, SecondaryBtn } from "@/components/marketing/shared";
+import Typewriter from "@/components/marketing/Typewriter";
 import { getLoginUrl } from "@/lib/env";
 
 /* ──────────────────────────────────────────────────────────────
@@ -67,10 +68,7 @@ export default function Landing() {
                    WebkitMaskImage: 'radial-gradient(ellipse at center, black 20%, transparent 60%)'
                  }} />
 
-            <div className="inline-flex items-center gap-2.5 rounded-full border border-ng-border px-4 py-1.5 mb-8 bg-ng-elevated backdrop-blur-md cursor-pointer hover:bg-ng-panel transition-colors shadow-sm relative z-10">
-              <span className="w-2 h-2 rounded-full animate-pulse" style={{ background: "var(--color-ng-green)", boxShadow: "0 0 10px var(--color-ng-green)" }} />
-              <span className="font-mono text-[12px] font-medium tracking-wide text-ng-text">NestGuard OS · v0.1</span>
-            </div>
+
             
             <h1 className="font-display font-medium leading-[1.05] tracking-tight text-[40px] sm:text-[56px] md:text-[72px] max-w-4xl relative z-10">
               Hostel security <br />
@@ -83,10 +81,9 @@ export default function Landing() {
               </span>.
             </h1>
             
-            <p className="mt-8 text-[16px] md:text-[20px] leading-relaxed text-ng-secondary max-w-2xl font-light relative z-10">
-              Replace archaic sign-in registers with cryptographic biometric authentication. 
-              Real-time monitoring, AI anomaly detection, and zero friction.
-            </p>
+            <div className="mt-8 text-[16px] md:text-[20px] leading-relaxed text-ng-secondary max-w-2xl font-light relative z-10 mx-auto h-[1.5em]">
+              <Typewriter text="Real-time monitoring, AI anomaly detection, and zero friction." speed={40} delay={600} />
+            </div>
           </div>
           
           <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto">

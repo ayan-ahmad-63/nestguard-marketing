@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import Image from "next/image";
-import { getLoginUrl } from "@/lib/env";
+
 
 export default function Footer() {
   return (
@@ -41,8 +41,7 @@ export default function Footer() {
           <ul className="flex flex-col gap-3">
             <li><Link href="/docs" className="text-sm text-ng-secondary hover:text-ng-text transition-colors">Documentation</Link></li>
             <li><Link href="/status" className="text-sm text-ng-secondary hover:text-ng-text transition-colors">System Status</Link></li>
-            {/* Cross-domain link: plain <a>, not next/link */}
-            <li><a href={getLoginUrl()} className="text-sm text-ng-secondary hover:text-ng-text transition-colors">Admin Login</a></li>
+
           </ul>
         </div>
       </div>
@@ -52,8 +51,8 @@ export default function Footer() {
         <div className="mx-auto max-w-6xl px-5 sm:px-8 py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="font-mono text-[11px] text-ng-muted">© 2026 NestGuard</p>
           <div className="flex items-center gap-2">
-            <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
-            <p className="font-mono text-[11px] text-ng-muted uppercase tracking-widest">All Systems Nominal</p>
+            <span className="w-1.5 h-1.5 rounded-full bg-ng-orange animate-pulse" />
+            <p className="font-mono text-[11px] text-ng-muted uppercase tracking-widest">In Development</p>
           </div>
         </div>
       </div>

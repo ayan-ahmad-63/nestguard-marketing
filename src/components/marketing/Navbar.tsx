@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
-import { Icon, icons } from "./shared";
+import { Icon, icons, PrimaryBtn } from "./shared";
 import { getLoginUrl } from "@/lib/env";
 
 const NAV_LINKS = [
@@ -54,10 +54,9 @@ export default function Navbar() {
 
         <div className="flex items-center gap-5">
           <div className="hidden sm:flex items-center">
-            {/* Cross-domain link: next/link would not work correctly here */}
-            <a href={loginUrl} className="text-[14px] font-semibold text-ng-secondary hover:text-ng-text transition-colors mr-5">
-              Log in
-            </a>
+            <div className="md:mr-0 mr-5">
+              <PrimaryBtn href={loginUrl}>Log in</PrimaryBtn>
+            </div>
           </div>
           <button
             className="md:hidden w-8 h-8 grid place-items-center rounded-full text-ng-secondary cursor-pointer hover:bg-white/10"
@@ -79,9 +78,7 @@ export default function Navbar() {
             </Link>
           ))}
           <div className="h-px w-full bg-ng-border my-2" />
-          <a href={loginUrl} className="font-display font-semibold text-ng-text text-[14px]" onClick={() => setMenu(false)}>
-            Log in to Console
-          </a>
+          <PrimaryBtn href={loginUrl}>Log in to Console</PrimaryBtn>
         </div>
       )}
     </header>
