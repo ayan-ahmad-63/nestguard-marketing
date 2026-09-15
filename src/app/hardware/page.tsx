@@ -45,21 +45,23 @@ export default function HardwarePage() {
   return (
     <MarketingShell>
       <PageHero
-        title="The physical access layer."
-        subtitle="Optical biometric sensors, relay-driven locks, and a dedicated hardware gateway — purpose-built for hostel gate access control."
+        eyebrow="Hardware"
+        title="Purpose-Built Physical Infrastructure."
+        subtitle="Deploy with confidence. Our purpose-built optical biometric gateways and high-durability relay systems guarantee sub-second authentication under the most demanding hostel environments."
+        variant="hardware"
       />
 
-      <section className="mx-auto max-w-6xl px-5 sm:px-8 pb-16">
-        <div className="flex flex-col gap-32">
+      <section className="mx-auto max-w-6xl px-5 sm:px-8 pt-32 md:pt-40 pb-32">
+        <div className="flex flex-col gap-32 md:gap-48">
           {sections.map((s, i) => (
             <div key={i} className="flex flex-col items-center text-center">
               <div className="w-16 h-16 rounded-2xl bg-ng-elevated border border-ng-border flex items-center justify-center mb-6 shadow-lg" style={{ color: "#FF6B00" }}>
                 <Icon path={s.icon} size={32} />
               </div>
-              <h3 className="font-display font-medium text-3xl md:text-4xl mb-6">{s.title}</h3>
+              <h3 className="font-display font-medium text-3xl md:text-4xl tracking-tight mb-4 max-w-2xl">{s.title}</h3>
               <div className="flex flex-col gap-4 items-center">
                 {s.paragraphs.map((p, j) => (
-                  <p key={j} className="text-ng-secondary text-lg leading-relaxed max-w-3xl">{p}</p>
+                  <p key={j} className="text-ng-secondary text-lg leading-relaxed max-w-2xl">{p}</p>
                 ))}
               </div>
             </div>
@@ -68,7 +70,7 @@ export default function HardwarePage() {
       </section>
 
       {/* Build status note */}
-      <section className="mx-auto max-w-6xl px-5 sm:px-8 pb-24">
+      <section className="mx-auto max-w-6xl px-5 sm:px-8 pb-32">
         <div className="mx-auto max-w-3xl rounded-2xl border border-ng-border bg-ng-panel p-8 md:p-10 flex flex-col items-center text-center gap-4 shadow-2xl relative overflow-hidden">
           <div className="absolute top-0 right-0 w-32 h-32 bg-amber-500/10 blur-[50px] rounded-full pointer-events-none" />
           <div className="w-12 h-12 rounded-2xl bg-ng-elevated border border-ng-border flex items-center justify-center shrink-0 mb-2 shadow-sm" style={{ color: "var(--color-ng-amber)" }}>

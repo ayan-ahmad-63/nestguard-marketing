@@ -5,23 +5,21 @@ import { Icon, icons } from "@/components/marketing/shared";
 export default function ContactPage() {
   return (
     <MarketingShell>
-      <PageHero
-        title="Get in touch"
-        subtitle="Interested in NestGuard for your institution? Reach out and we'll walk you through the system."
-      />
-
-      <section className="mx-auto max-w-6xl px-5 sm:px-8 pb-32">
+      <section className="mx-auto max-w-7xl px-5 sm:px-8 pt-40 pb-32">
         <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-start">
           {/* Left Side - Info & Cards */}
-          <div className="flex flex-col gap-10">
+          <div className="flex flex-col gap-16">
             <div>
-              <h2 className="font-display font-medium text-3xl sm:text-4xl leading-tight mb-6">
+              <span className="font-display font-medium text-[16px] md:text-[18px] text-ng-text mb-6 block">
+                Contact
+              </span>
+              <h1 className="font-display font-medium leading-[1.1] tracking-tight text-5xl sm:text-6xl md:text-7xl max-w-xl mb-6">
                 Let's upgrade your <br/>
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-ng-orange to-amber-500">
-                  hostel security.
+                  security.
                 </span>
-              </h2>
-              <p className="font-body text-ng-secondary text-lg leading-relaxed max-w-md">
+              </h1>
+              <p className="font-body text-ng-secondary text-lg md:text-xl leading-relaxed max-w-md">
                 Whether you have technical questions, need a custom deployment plan, or just want to see a live demo, our team is ready to help.
               </p>
             </div>

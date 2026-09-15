@@ -3,6 +3,7 @@ import MarketingShell from "@/components/marketing/MarketingShell";
 import PageHero from "@/components/marketing/PageHero";
 import CTABand from "@/components/marketing/CTABand";
 import { Icon, icons } from "@/components/marketing/shared";
+import Typewriter from "@/components/marketing/Typewriter";
 
 const sections = [
   {
@@ -48,28 +49,37 @@ const roles = [
   { role: "Student", abilities: "Request visitor passes, submit leave applications, view own access history" },
 ];
 
-export default function SecurityPage() {
+export default function Security() {
   return (
     <MarketingShell>
       <PageHero
-        title="Intelligent, verifiable security."
-        subtitle="NestGuard combines real-time behavioral analysis with permanent audit logging to make hostel security transparent, accountable, and proactive."
+        eyebrow="Security"
+        title={
+          <span 
+            className="block h-[1.2em] min-h-[1.2em] text-transparent bg-clip-text"
+            style={{ backgroundImage: "linear-gradient(90deg, var(--color-ng-orange), #FFB067)" }}
+          >
+            <Typewriter words={["Intelligent.", "Verifiable.", "Security."]} speed={50} eraseSpeed={30} delay={600} pause={2000} />
+          </span>
+        }
+        subtitle="Powered by advanced behavioral analytics and immutable audit logging. NestGuard doesn't just record who enters — it actively understands baseline behaviors to flag risks before they escalate."
+        variant="security"
       />
 
-      <section className="mx-auto max-w-6xl px-5 sm:px-8 pb-24">
-        <div className="flex flex-col gap-32">
+      <section className="mx-auto max-w-6xl px-5 sm:px-8 pt-32 md:pt-40 pb-32">
+        <div className="flex flex-col gap-32 md:gap-48">
           {sections.map((s, i) => (
             <div key={i} className="flex flex-col items-center text-center">
               <div className="w-16 h-16 rounded-2xl bg-ng-elevated border border-ng-border flex items-center justify-center mb-6 shadow-lg" style={{ color: "#FF6B00" }}>
                 <Icon path={s.icon} size={32} />
               </div>
-              <h3 className="font-display font-medium text-3xl md:text-4xl mb-6">{s.title}</h3>
+              <h3 className="font-display font-medium text-3xl md:text-4xl tracking-tight mb-4 max-w-2xl">{s.title}</h3>
               <div className="flex flex-col gap-4 items-center">
                 {s.paragraphs.map((p, j) => (
-                  <p key={j} className="text-ng-secondary text-lg leading-relaxed max-w-3xl">{p}</p>
+                  <p key={j} className="text-ng-secondary text-lg leading-relaxed max-w-2xl">{p}</p>
                 ))}
                 {s.title === "Role-Based Access Control" && (
-                  <div className="mt-8 w-full max-w-4xl rounded-2xl border border-ng-border overflow-hidden bg-ng-panel shadow-2xl text-left">
+                  <div className="mt-12 w-full max-w-4xl rounded-2xl border border-ng-border overflow-hidden bg-ng-panel shadow-2xl text-left">
                     <table className="w-full">
                       <thead>
                         <tr className="border-b border-ng-border bg-ng-elevated">

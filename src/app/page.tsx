@@ -4,6 +4,8 @@ import { Icon, icons, PrimaryBtn, SecondaryBtn } from "@/components/marketing/sh
 import Typewriter from "@/components/marketing/Typewriter";
 import { getLoginUrl } from "@/lib/env";
 
+import HeroMouseGlow from "@/components/marketing/HeroMouseGlow";
+
 /* ──────────────────────────────────────────────────────────────
    NestGuard — Landing Page (Convoa / ChatQuartz Aesthetic)
    Hyper-modern, glowing, massive typography, bento grids.
@@ -35,7 +37,7 @@ export default function Landing() {
       `}</style>
 
         {/* Hero & Dashboard Wrapper (Constrains Canvas) */}
-        <div className="relative pb-20">
+        <HeroMouseGlow>
           
           {/* Minimalist Canvas Background */}
           <div 
@@ -94,7 +96,7 @@ export default function Landing() {
         </section>
 
         {/* ── 3. 3D Floating Dashboard Preview ────────────── */}
-        <section className="mx-auto max-w-6xl px-5 sm:px-8 mt-20 md:mt-32 mb-32" style={{ perspective: "1200px" }}>
+        <section className="mx-auto max-w-6xl px-5 sm:px-8 mt-20 md:mt-32 pb-40 md:pb-52" style={{ perspective: "1200px" }}>
           <div 
             className="w-full rounded-2xl border border-ng-border/50 overflow-hidden relative"
             style={{ 
@@ -178,7 +180,7 @@ export default function Landing() {
             </div>
           </div>
         </section>
-        </div> {/* End Hero & Dashboard Wrapper */}
+        </HeroMouseGlow> {/* End Hero & Dashboard Wrapper */}
 
         {/* ── 3.5. How It Works ───────────────────────────── */}
         <section className="mx-auto max-w-6xl px-5 sm:px-8 py-20">

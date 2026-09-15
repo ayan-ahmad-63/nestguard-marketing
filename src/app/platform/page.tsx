@@ -36,19 +36,21 @@ export default function PlatformPage() {
   return (
     <MarketingShell>
       <PageHero
-        title="One console for every gate."
-        subtitle="NestGuard OS gives wardens, security staff, and administrators a unified command center for real-time hostel access monitoring, visitor management, and anomaly detection."
+        eyebrow="Platform"
+        title="One Unified Command Center."
+        subtitle="NestGuard OS delivers unparalleled visibility across your entire campus. Monitor real-time access, manage visitor workflows, and detect anomalies instantly from a single, hyper-responsive pane of glass."
+        variant="platform"
       />
 
-      <section className="mx-auto max-w-6xl px-5 sm:px-8 pb-24">
-        <div className="flex flex-col gap-32">
+      <section className="mx-auto max-w-6xl px-5 sm:px-8 pt-32 md:pt-40 pb-32">
+        <div className="flex flex-col gap-32 md:gap-48">
           {features.map((f, i) => (
             <div key={i} className="flex flex-col items-center text-center">
               <div className="w-16 h-16 rounded-2xl bg-ng-elevated border border-ng-border flex items-center justify-center mb-6 shadow-lg" style={{ color: "#FF6B00" }}>
                 <Icon path={f.icon} size={32} />
               </div>
-              <h3 className="font-display font-medium text-3xl md:text-4xl mb-4 max-w-2xl">{f.title}</h3>
-              <p className="text-ng-secondary text-lg leading-relaxed max-w-3xl mb-12">{f.desc}</p>
+              <h3 className="font-display font-medium text-3xl md:text-4xl tracking-tight mb-4 max-w-2xl">{f.title}</h3>
+              <p className="text-ng-secondary text-lg leading-relaxed max-w-2xl mb-12">{f.desc}</p>
               
               {/* Placeholder panel mimicking the dashboard mockup style */}
               <div className="w-full max-w-4xl rounded-2xl border border-ng-border bg-ng-panel p-6 md:p-10 shadow-2xl relative overflow-hidden">

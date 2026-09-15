@@ -7,9 +7,9 @@ import { Icon, icons, PrimaryBtn } from "./shared";
 import { getLoginUrl } from "@/lib/env";
 
 const NAV_LINKS = [
+  { label: "Home", href: "/" },
   { label: "Platform", href: "/platform" },
   { label: "Security", href: "/security" },
-  { label: "Hardware", href: "/hardware" },
   { label: "How It Works", href: "/how-it-works" },
   { label: "About", href: "/about" },
 ];
@@ -33,7 +33,7 @@ export default function Navbar() {
         style={
           scrolled
             ? { background: "var(--ng-glass)", backdropFilter: "blur(32px)", WebkitBackdropFilter: "blur(32px)", boxShadow: "var(--ng-shadow-lg)" }
-            : { background: "transparent", backdropFilter: "blur(12px)", WebkitBackdropFilter: "blur(12px)", boxShadow: "none" }
+            : { background: "transparent", backdropFilter: "none", WebkitBackdropFilter: "none", boxShadow: "none" }
         }
       >
         <Link href="/" className="flex items-center shrink-0 hover:opacity-80 transition-opacity">

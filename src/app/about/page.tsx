@@ -13,15 +13,19 @@ export default function AboutPage() {
   return (
     <MarketingShell>
       <PageHero
+        eyebrow="About"
         title="About NestGuard"
         subtitle="A final-year project born from a real problem — the lack of secure, automated, real-time access monitoring in university hostels."
+        showCanvas={false}
       />
 
       {/* Mission */}
-      <section className="mx-auto max-w-6xl px-5 sm:px-8 pb-24">
-        <div className="mx-auto max-w-4xl text-center flex flex-col items-center">
-          <h2 className="font-display font-medium text-3xl md:text-4xl mb-8">Why we built this</h2>
-          <div className="flex flex-col gap-6 text-ng-secondary text-lg leading-relaxed">
+      <section className="mx-auto max-w-6xl px-5 sm:px-8 pb-32">
+        <div className="grid md:grid-cols-[1fr_2fr] gap-12 md:gap-20 items-start">
+          <h2 className="font-display font-medium text-4xl md:text-5xl tracking-tight leading-tight sticky top-32">
+            Why we <br className="hidden md:block" /> built this
+          </h2>
+          <div className="flex flex-col gap-8 text-ng-secondary text-lg md:text-xl leading-relaxed">
             <p>
               University hostels across Pakistan still rely on paper sign-in registers and manual gatekeeping. These systems are trivially forgeable, offer zero real-time visibility, and create no usable data trail for wardens or administration.
             </p>
@@ -29,22 +33,22 @@ export default function AboutPage() {
               NestGuard replaces this with an end-to-end biometric access control system: optical fingerprint sensors at every gate, a real-time centralized dashboard, AI-driven anomaly detection, and permanent audit logging. The goal is not to surveil students, but to make hostel access transparent, accountable, and safe for everyone.
             </p>
             <p>
-              This project was developed as a Bachelor of Science in Software Engineering final-year project, combining embedded systems (Arduino + AS608 sensor), full-stack web development (Next.js + Node.js), and machine learning (behavioral anomaly detection) into a single integrated platform.
+              This project was developed as a Bachelor of Science in Computer Science final-year project, combining embedded systems (Arduino + AS608 sensor), full-stack web development (Next.js + Node.js), and machine learning (behavioral anomaly detection) into a single integrated platform.
             </p>
           </div>
         </div>
       </section>
 
       {/* Team */}
-      <section id="team" className="mx-auto max-w-6xl px-5 sm:px-8 pb-24 text-center">
-        <h2 className="font-display font-medium text-3xl md:text-4xl mb-12">The Team</h2>
-        <div className="flex flex-wrap justify-center gap-6">
+      <section id="team" className="mx-auto max-w-6xl px-5 sm:px-8 pb-32">
+        <h2 className="font-display font-medium text-3xl md:text-4xl tracking-tight mb-12">The Team</h2>
+        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
           {team.map((member) => (
-            <div key={member.name} className="w-[240px] rounded-3xl border border-ng-border bg-ng-panel p-8 flex flex-col items-center shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
-              <div className="w-16 h-16 rounded-full bg-ng-elevated border border-ng-border flex items-center justify-center mb-5 shadow-inner">
-                <span className="font-display font-bold text-2xl text-ng-orange">{member.name.charAt(0)}</span>
+            <div key={member.name} className="w-full rounded-[2rem] border border-ng-border bg-ng-panel p-8 flex flex-col items-start shadow-sm hover:shadow-xl hover:border-ng-orange/50 transition-all duration-300 group">
+              <div className="w-16 h-16 rounded-2xl bg-ng-elevated border border-ng-border flex items-center justify-center mb-8 shadow-inner group-hover:scale-110 transition-transform">
+                <span className="font-display font-medium text-2xl text-ng-orange">{member.name.charAt(0)}</span>
               </div>
-              <h3 className="font-display font-medium text-lg mb-1">{member.name}</h3>
+              <h3 className="font-display font-medium text-xl mb-2">{member.name}</h3>
               <p className="font-mono text-xs text-ng-secondary uppercase tracking-widest">{member.role}</p>
             </div>
           ))}

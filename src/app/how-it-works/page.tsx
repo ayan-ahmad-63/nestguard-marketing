@@ -1,6 +1,6 @@
 "use client";
 import MarketingShell from "@/components/marketing/MarketingShell";
-import PageHero from "@/components/marketing/PageHero";
+import HeroCanvas from "@/components/marketing/HeroCanvas";
 import CTABand from "@/components/marketing/CTABand";
 import { Icon, icons } from "@/components/marketing/shared";
 
@@ -46,40 +46,68 @@ const steps = [
 export default function HowItWorksPage() {
   return (
     <MarketingShell>
-      <PageHero
-        title="From scan to secured."
-        subtitle="The full NestGuard pipeline — six steps, under one second, fully automated."
-      />
+      {/* Locked Fullscreen View */}
+      <div className="relative h-screen w-full overflow-hidden bg-ng-bg">
+        
+        {/* Full-height canvas background */}
+        <div className="absolute inset-0 z-0">
+          <HeroCanvas variant="how-it-works" />
+        </div>
 
-      <section className="mx-auto max-w-6xl px-5 sm:px-8 pb-24">
-        <div className="relative mx-auto max-w-4xl">
-          {/* Centered vertical timeline line */}
-          <div className="absolute left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-ng-border via-ng-orange/30 to-transparent -translate-x-1/2 hidden md:block" />
+        <div className="relative z-10 mx-auto max-w-7xl px-5 sm:px-8 h-full pt-24 md:pt-32">
+          <div className="grid lg:grid-cols-[1fr_1.5fr] gap-8 lg:gap-24 h-full w-full">
+            
+            {/* Left Side: Static Hero Content */}
+            <div className="flex flex-col justify-center h-full pb-32 lg:pb-0">
+              <span className="font-display font-medium text-[16px] md:text-[18px] text-ng-text mb-4 lg:mb-6 block">
+                How It Works
+              </span>
+              <h1 className="font-display font-medium leading-[1.1] tracking-tight text-4xl sm:text-6xl md:text-7xl mb-4 lg:mb-6">
+                From scan to <br/>
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-ng-orange to-amber-500">
+                  secured.
+                </span>
+              </h1>
+              <p className="font-body text-ng-secondary text-base lg:text-xl leading-relaxed max-w-md hidden md:block">
+                The full NestGuard pipeline — six steps, under one second, fully automated. Scroll to explore.
+              </p>
+            </div>
 
-          <div className="flex flex-col gap-24">
-            {steps.map((s, i) => (
-              <div key={s.step} className="relative flex flex-col items-center text-center">
-                {/* Step number circle */}
-                <div className="relative z-10 w-16 h-16 rounded-full bg-ng-bg border border-ng-border flex items-center justify-center shrink-0 mb-8 shadow-[0_0_20px_rgba(255,107,0,0.15)] shadow-ng-orange/10">
-                  <div className="absolute inset-2 rounded-full border border-ng-orange/30 flex items-center justify-center">
-                    <span className="font-mono text-lg font-bold text-ng-orange">{s.step}</span>
+            {/* Right Side: Internal Scroll Container */}
+            <div 
+              className="relative h-full overflow-y-auto snap-y snap-mandatory pb-[30vh]"
+              style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+            >
+              <style dangerouslySetInnerHTML={{__html: `::-webkit-scrollbar { display: none; }`}} />
+              
+              {/* Left-aligned vertical timeline line */}
+              <div className="absolute left-8 top-0 bottom-0 w-px bg-ng-orange/30 hidden md:block" />
+
+              <div className="flex flex-col">
+                {steps.map((s, i) => (
+                  <div key={i} className="relative flex flex-col md:flex-row gap-8 md:gap-16 items-center snap-center min-h-[60vh] lg:min-h-[80vh] py-10">
+                    {/* Step Number / Node on the line */}
+                    <div className="hidden md:flex flex-col items-center shrink-0 w-16 relative z-10">
+                      <div className="font-display font-medium text-ng-orange text-xl bg-ng-bg px-2 py-1 rounded-lg">{s.step}</div>
+                      <div className="w-3 h-3 rounded-full bg-ng-orange mt-4 shadow-[0_0_15px_rgba(255,107,0,1)]" />
+                    </div>
+                    
+                    {/* Content Box */}
+                    <div className="flex-1 flex flex-col bg-ng-panel/60 backdrop-blur-xl border border-ng-border/50 rounded-[2rem] p-8 lg:p-10 shadow-2xl transition-all hover:border-ng-orange/30 hover:bg-ng-panel/80">
+                      <div className="md:hidden font-display font-medium text-ng-orange text-xl mb-4">Step {s.step}</div>
+                      <div className="w-14 h-14 lg:w-16 lg:h-16 rounded-2xl bg-ng-elevated border border-ng-border flex items-center justify-center mb-6 shadow-lg" style={{ color: "#FF6B00" }}>
+                        <Icon path={s.icon} size={32} />
+                      </div>
+                      <h3 className="font-display font-medium text-2xl lg:text-3xl tracking-tight mb-4">{s.title}</h3>
+                      <p className="text-ng-secondary text-base lg:text-lg leading-relaxed max-w-2xl">{s.desc}</p>
+                    </div>
                   </div>
-                </div>
-
-                <div className="flex flex-col items-center max-w-2xl bg-ng-panel/50 backdrop-blur-sm border border-ng-border rounded-3xl p-8 shadow-xl">
-                  <div className="w-14 h-14 rounded-2xl bg-ng-elevated border border-ng-border flex items-center justify-center mb-6 shadow-sm" style={{ color: "#FF6B00" }}>
-                    <Icon path={s.icon} size={28} />
-                  </div>
-                  <h3 className="font-display font-medium text-3xl mb-4">{s.title}</h3>
-                  <p className="text-ng-secondary text-lg leading-relaxed">{s.desc}</p>
-                </div>
+                ))}
               </div>
-            ))}
+            </div>
           </div>
         </div>
-      </section>
-
-      <CTABand />
+      </div>
     </MarketingShell>
   );
 }
