@@ -1,10 +1,23 @@
 "use client";
 import React, { useState, useEffect } from "react";
 
-export default function Typewriter({ text, speed = 40, delay = 500 }: { text: string; speed?: number; delay?: number }) {
+export default function Typewriter({ 
+  words, 
+  speed = 40, 
+  eraseSpeed = 20,
+  delay = 500,
+  pause = 1500
+}: { 
+  words: string[]; 
+  speed?: number; 
+  eraseSpeed?: number;
+  delay?: number;
+  pause?: number;
+}) {
   const [displayedText, setDisplayedText] = useState("");
   const [isStarted, setIsStarted] = useState(false);
-  const [isFinished, setIsFinished] = useState(false);
+  const [wordIndex, setWordIndex] = useState(0);
+  const [isDeleting, setIsDeleting] = useState(false);
 
   useEffect(() => {
     const startTimeout = setTimeout(() => {
@@ -16,18 +29,34 @@ export default function Typewriter({ text, speed = 40, delay = 500 }: { text: st
   useEffect(() => {
     if (!isStarted) return;
     
-    let i = 0;
-    const interval = setInterval(() => {
-      setDisplayedText(text.slice(0, i + 1));
-      i++;
-      if (i >= text.length) {
-        clearInterval(interval);
-        setIsFinished(true);
-      }
-    }, speed);
+    const currentWord = words[wordIndex];
+    let timer: NodeJS.Timeout;
     
-    return () => clearInterval(interval);
-  }, [text, speed, isStarted]);
+    if (isDeleting) {
+      if (displayedText.length > 0) {
+        timer = setTimeout(() => {
+          setDisplayedText(currentWord.slice(0, displayedText.length - 1));
+        }, eraseSpeed);
+      } else {
+        setIsDeleting(false);
+        setWordIndex((prev) => (prev + 1) % words.length);
+      }
+    } else {
+      if (displayedText.length < currentWord.length) {
+        timer = setTimeout(() => {
+          setDisplayedText(currentWord.slice(0, displayedText.length + 1));
+        }, speed);
+      } else {
+        timer = setTimeout(() => {
+          setIsDeleting(true);
+        }, pause);
+      }
+    }
+    
+    return () => clearTimeout(timer);
+  }, [displayedText, isDeleting, isStarted, wordIndex, words, speed, eraseSpeed, pause]);
+
+  const isPaused = !isStarted || (!isDeleting && displayedText === words[wordIndex]);
 
   return (
     <div style={{ display: "flex", flexWrap: "wrap", gap: "0.22em", overflow: "hidden", paddingBottom: "0.08em", marginBottom: "0.02em", justifyContent: "center" }}>
@@ -41,8 +70,8 @@ export default function Typewriter({ text, speed = 40, delay = 500 }: { text: st
             background: "currentColor", 
             marginLeft: "2px", 
             verticalAlign: "middle",
-            opacity: isFinished ? 0 : 1,
-            animation: isFinished ? "pulse 1s cubic-bezier(0.4, 0, 0.6, 1) infinite" : "none"
+            animation: isPaused ? "pulse 1s cubic-bezier(0.4, 0, 0.6, 1) infinite" : "none",
+            opacity: isPaused ? undefined : 1
           }}
         />
       </span>

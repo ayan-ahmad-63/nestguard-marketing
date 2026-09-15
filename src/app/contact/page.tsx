@@ -10,65 +10,108 @@ export default function ContactPage() {
         subtitle="Interested in NestGuard for your institution? Reach out and we'll walk you through the system."
       />
 
-      <section className="mx-auto max-w-3xl px-5 sm:px-8 pb-32">
-        <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" className="rounded-[2.5rem] border border-ng-border bg-ng-panel p-10 md:p-14 flex flex-col gap-8 shadow-2xl relative overflow-hidden">
-            <div className="absolute top-0 right-0 w-64 h-64 bg-ng-orange/5 blur-[100px] rounded-full pointer-events-none" />
-            
-            <div className="relative z-10 grid md:grid-cols-2 gap-8">
-              <div className="flex flex-col gap-8">
+      <section className="mx-auto max-w-6xl px-5 sm:px-8 pb-32">
+        <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-start">
+          {/* Left Side - Info & Cards */}
+          <div className="flex flex-col gap-10">
+            <div>
+              <h2 className="font-display font-medium text-3xl sm:text-4xl leading-tight mb-6">
+                Let's upgrade your <br/>
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-ng-orange to-amber-500">
+                  hostel security.
+                </span>
+              </h2>
+              <p className="font-body text-ng-secondary text-lg leading-relaxed max-w-md">
+                Whether you have technical questions, need a custom deployment plan, or just want to see a live demo, our team is ready to help.
+              </p>
+            </div>
+
+            <div className="grid sm:grid-cols-2 gap-6">
+              <div className="rounded-[2rem] border border-ng-border bg-ng-panel p-8 shadow-sm flex flex-col items-start gap-4 hover:border-ng-orange/50 transition-colors group">
+                <div className="w-12 h-12 rounded-2xl bg-ng-elevated border border-ng-border flex items-center justify-center text-ng-orange group-hover:scale-110 transition-transform">
+                  <Icon path={icons.mail} size={24} />
+                </div>
                 <div>
-                  <label className="block font-display text-sm font-medium mb-3">Name</label>
+                  <h3 className="font-display font-medium text-lg mb-1">Email us</h3>
+                  <p className="text-sm text-ng-secondary mb-3">For general inquiries</p>
+                  <a href="mailto:hello@nestguard.live" className="text-sm font-semibold hover:text-ng-orange transition-colors">hello@nestguard.live</a>
+                </div>
+              </div>
+              
+              <div className="rounded-[2rem] border border-ng-border bg-ng-panel p-8 shadow-sm flex flex-col items-start gap-4 hover:border-ng-orange/50 transition-colors group">
+                <div className="w-12 h-12 rounded-2xl bg-ng-elevated border border-ng-border flex items-center justify-center text-ng-orange group-hover:scale-110 transition-transform">
+                  <Icon path={icons.shield} size={24} />
+                </div>
+                <div>
+                  <h3 className="font-display font-medium text-lg mb-1">Support</h3>
+                  <p className="text-sm text-ng-secondary mb-3">For existing clients</p>
+                  <a href="mailto:support@nestguard.live" className="text-sm font-semibold hover:text-ng-orange transition-colors">support@nestguard.live</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Right Side - Form */}
+          <div className="relative">
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-ng-orange/5 blur-[120px] rounded-full pointer-events-none" />
+            
+            <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" className="relative z-10 rounded-[2.5rem] border border-ng-border bg-ng-panel/50 backdrop-blur-2xl p-8 sm:p-12 flex flex-col gap-6 shadow-2xl">
+              
+              <div className="grid sm:grid-cols-2 gap-6">
+                <div>
+                  <label className="block font-display text-sm font-medium mb-2.5 text-ng-secondary">Full Name</label>
                   <input
                     name="name"
                     required
-                    className="w-full rounded-2xl border border-ng-border bg-ng-elevated px-5 py-4 text-base text-ng-text placeholder:text-ng-muted focus:outline-none focus:border-ng-orange transition-colors shadow-inner"
-                    placeholder="Your name"
+                    className="w-full rounded-2xl border border-ng-border bg-ng-elevated/50 px-5 py-4 text-base text-ng-text placeholder:text-ng-muted focus:outline-none focus:border-ng-orange focus:bg-ng-elevated transition-all shadow-inner"
+                    placeholder="John Doe"
                   />
                 </div>
                 <div>
-                  <label className="block font-display text-sm font-medium mb-3">Email</label>
+                  <label className="block font-display text-sm font-medium mb-2.5 text-ng-secondary">Work Email</label>
                   <input
                     name="email"
                     type="email"
                     required
-                    className="w-full rounded-2xl border border-ng-border bg-ng-elevated px-5 py-4 text-base text-ng-text placeholder:text-ng-muted focus:outline-none focus:border-ng-orange transition-colors shadow-inner"
-                    placeholder="you@institution.edu"
-                  />
-                </div>
-                <div>
-                  <label className="block font-display text-sm font-medium mb-3">Institution</label>
-                  <input
-                    name="institution"
-                    className="w-full rounded-2xl border border-ng-border bg-ng-elevated px-5 py-4 text-base text-ng-text placeholder:text-ng-muted focus:outline-none focus:border-ng-orange transition-colors shadow-inner"
-                    placeholder="University or organization"
+                    className="w-full rounded-2xl border border-ng-border bg-ng-elevated/50 px-5 py-4 text-base text-ng-text placeholder:text-ng-muted focus:outline-none focus:border-ng-orange focus:bg-ng-elevated transition-all shadow-inner"
+                    placeholder="john@university.edu"
                   />
                 </div>
               </div>
+
+              <div>
+                <label className="block font-display text-sm font-medium mb-2.5 text-ng-secondary">Institution Name</label>
+                <input
+                  name="institution"
+                  className="w-full rounded-2xl border border-ng-border bg-ng-elevated/50 px-5 py-4 text-base text-ng-text placeholder:text-ng-muted focus:outline-none focus:border-ng-orange focus:bg-ng-elevated transition-all shadow-inner"
+                  placeholder="e.g. University of Lahore"
+                />
+              </div>
               
-              <div className="flex flex-col">
-                <label className="block font-display text-sm font-medium mb-3">Message</label>
+              <div>
+                <label className="block font-display text-sm font-medium mb-2.5 text-ng-secondary">How can we help?</label>
                 <textarea
                   name="message"
                   required
-                  className="w-full h-full min-h-[200px] rounded-2xl border border-ng-border bg-ng-elevated px-5 py-4 text-base text-ng-text placeholder:text-ng-muted focus:outline-none focus:border-ng-orange transition-colors resize-none shadow-inner"
-                  placeholder="Tell us about your use case..."
+                  className="w-full min-h-[160px] rounded-2xl border border-ng-border bg-ng-elevated/50 px-5 py-4 text-base text-ng-text placeholder:text-ng-muted focus:outline-none focus:border-ng-orange focus:bg-ng-elevated transition-all resize-none shadow-inner"
+                  placeholder="Tell us about your campus setup and requirements..."
                 />
               </div>
-            </div>
-            
-            <div className="relative z-10 flex flex-col items-center mt-4">
-              <button
-                type="submit"
-                className="w-full md:w-auto px-12 py-4 rounded-full bg-ng-orange text-white font-display font-semibold text-base transition-all hover:brightness-110 active:scale-[0.98] cursor-pointer shadow-[0_0_20px_rgba(255,107,0,0.3)]"
-              >
-                Send Message
-              </button>
-              <p className="text-center text-ng-secondary text-sm mt-6">
-                Or email us directly at{" "}
-                <a href="mailto:nestguard@uol.edu.pk" className="text-ng-orange hover:underline font-medium">nestguard@uol.edu.pk</a>
-              </p>
-            </div>
-          </form>
+              
+              <div className="pt-2">
+                <button
+                  type="submit"
+                  className="w-full py-4 rounded-2xl bg-ng-orange text-white font-display font-semibold text-base transition-all hover:brightness-110 active:scale-[0.98] cursor-pointer shadow-[0_0_20px_rgba(255,107,0,0.3)]"
+                >
+                  Send Message
+                </button>
+                <p className="font-mono text-center text-ng-muted text-[11px] uppercase tracking-widest mt-6">
+                  We respond within one business day
+                </p>
+              </div>
+            </form>
+          </div>
+        </div>
       </section>
     </MarketingShell>
   );

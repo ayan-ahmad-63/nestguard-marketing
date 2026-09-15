@@ -25,13 +25,12 @@ export default function Icon() {
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
-          background: '#ffffff',
-          borderRadius: '10px',
+          background: 'transparent',
         }}
       >
         <img 
           src={src}
-          style={{ width: '75%', height: '75%', objectFit: 'contain' }} 
+          style={{ width: '100%', height: '100%', objectFit: 'contain' }} 
         />
       </div>
     ),

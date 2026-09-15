@@ -82,7 +82,7 @@ export default function Landing() {
             </h1>
             
             <div className="mt-8 text-[16px] md:text-[20px] leading-relaxed text-ng-secondary max-w-2xl font-light relative z-10 mx-auto h-[1.5em]">
-              <Typewriter text="Real-time monitoring, AI anomaly detection, and zero friction." speed={40} delay={600} />
+              <Typewriter words={["Real-time monitoring", "AI anomaly detection", "Zero friction"]} speed={40} eraseSpeed={30} delay={600} pause={2000} />
             </div>
           </div>
           
@@ -260,10 +260,10 @@ export default function Landing() {
                 <div className="w-10 h-10 rounded-xl bg-ng-elevated border border-ng-border flex items-center justify-center mb-4" style={{ color: "#FF6B00" }}>
                   <Icon path={icons.bolt} size={20} />
                 </div>
-                <h3 className="font-display font-medium text-xl mb-2">Sub-second Latency</h3>
-                <p className="text-ng-secondary text-sm">Verification happens on the edge. Wardens see the log update globally within 400ms.</p>
+                <h3 className="font-display font-medium text-xl mb-2">Instant Sync</h3>
+                <p className="text-ng-secondary text-sm">Verification happens on the edge. Wardens see the log update globally in real-time.</p>
               </div>
-              <div className="mt-4 font-display font-medium text-4xl text-ng-text/20 tracking-tight">~400<span className="text-lg">ms</span></div>
+              <div className="mt-8 font-mono text-[10px] tracking-widest text-ng-muted uppercase">EDGE COMPUTING</div>
             </div>
 
             {/* Immutable Logs */}
