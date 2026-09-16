@@ -56,7 +56,7 @@ export default function PlatformPage() {
       <section id="dashboard" className="border-y border-ng-border/50 bg-ng-panel/30 scroll-mt-24">
         <div className="mx-auto max-w-6xl px-5 sm:px-8 grid md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-ng-border/50">
           <div className="py-24 md:py-32 md:pr-16 flex flex-col justify-center">
-            <p className="font-mono text-sm text-ng-orange tracking-widest uppercase mb-8">Centralized Dashboard</p>
+            <p className="font-mono text-sm text-ng-orange tracking-widest uppercase mb-8 ml-1">Centralized Dashboard</p>
             <h2 className="font-display font-medium text-3xl md:text-4xl lg:text-5xl leading-tight mb-8">
               A single pane of glass for every gate on campus.
             </h2>
@@ -93,7 +93,7 @@ export default function PlatformPage() {
 
       {/* 2. Platform Capabilities Grid */}
       <section id="capabilities" className="mx-auto max-w-6xl px-5 sm:px-8 pt-32 pb-32 scroll-mt-24">
-        <p className="font-mono text-sm text-ng-orange tracking-widest uppercase mb-8 text-center md:text-left">Core Capabilities</p>
+        <p className="font-mono text-sm text-ng-orange tracking-widest uppercase mb-8 text-center md:text-left ml-1">Core Capabilities</p>
         
         <div className="grid md:grid-cols-2 gap-6">
           {features.slice(1).map((f, i) => (

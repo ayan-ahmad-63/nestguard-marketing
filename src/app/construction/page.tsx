@@ -23,7 +23,7 @@ export default function ConstructionPage() {
           { label: "Contact Us", href: "/contact" }
         ]}
         showCanvas={true}
-        variant="default"
+        variant="construction"
         align="center"
       />
     </MarketingShell>

@@ -32,7 +32,7 @@ export default function AboutPage() {
         <div className="relative w-full max-w-6xl mx-auto px-5 sm:px-8 flex flex-col items-start text-left">
           
           <div className="relative z-10 w-full md:max-w-[55%] lg:max-w-[50%] pr-4 md:pr-0">
-            <p className="font-mono text-sm text-ng-orange tracking-widest uppercase mb-8 relative z-10">About The Project</p>
+            <p className="font-mono text-sm text-ng-orange tracking-widest uppercase mb-8 relative z-10 ml-1">About The Project</p>
             <h1 className="font-display font-medium leading-[1.05] tracking-tight text-[40px] sm:text-[56px] md:text-[72px] mb-8 relative z-10">
               Access security, <br />
               <em className="font-serif italic font-light text-transparent bg-clip-text animate-text-gradient" style={{ backgroundImage: "linear-gradient(90deg, var(--color-ng-orange), #FFB067, var(--color-ng-orange-deep), var(--color-ng-orange))" }}>engineered</em> for students.
@@ -135,7 +135,6 @@ export default function AboutPage() {
               <div className="flex flex-col gap-2">
                 <h3 className="font-display font-medium text-2xl">{member.name}</h3>
                 <p className="font-mono text-[10px] text-ng-orange uppercase tracking-widest mb-2">{member.role}</p>
-                <p className="text-ng-secondary text-sm leading-relaxed">{member.bio}</p>
               </div>
             </div>
           ))}
@@ -160,9 +159,9 @@ export default function AboutPage() {
           
           {/* Affiliation Card */}
           <div className="w-full rounded-[2rem] border border-ng-border bg-ng-panel p-10 md:p-14 flex flex-col justify-between min-h-[300px] relative overflow-hidden group hover:border-ng-orange/30 transition-colors">
-            <div className="absolute bottom-0 left-0 w-64 h-64 bg-white/5 blur-[80px] rounded-full pointer-events-none group-hover:bg-white/10 transition-colors" />
+            <div className="absolute bottom-0 left-0 w-64 h-64 bg-ng-orange/5 blur-[80px] rounded-full pointer-events-none group-hover:bg-ng-orange/10 transition-colors" />
             <div className="relative z-10">
-              <div className="text-ng-text mb-8"><Icon path={icons.gate} size={28} /></div>
+              <div className="text-ng-orange mb-8"><Icon path={icons.gate} size={28} /></div>
               <h3 className="font-display font-medium text-3xl mb-2">The University of Lahore</h3>
               <p className="text-ng-secondary text-base">Department of <br/>Computer Science & IT</p>
             </div>

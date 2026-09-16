@@ -59,7 +59,7 @@ export default function HowItWorksPage() {
             
             {/* Left Side: Static Hero Content */}
             <div className="flex flex-col justify-start lg:justify-center lg:h-full pt-4 lg:pt-0">
-                <p className="font-mono text-sm text-ng-orange tracking-widest uppercase mb-6 lg:mb-8 relative z-10">
+                <p className="font-mono text-sm text-ng-orange tracking-widest uppercase mb-6 lg:mb-8 relative z-10 ml-1">
                   How It Works
                 </p>
                 <h1 className="font-display font-medium leading-[1.05] tracking-tight text-[40px] sm:text-[56px] md:text-[72px] mb-6 lg:mb-8">

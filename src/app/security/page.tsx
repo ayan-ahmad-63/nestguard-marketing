@@ -74,7 +74,7 @@ export default function Security() {
       <section id="anomaly-detection" className="border-y border-ng-border/50 bg-ng-panel/30 scroll-mt-24">
         <div className="mx-auto max-w-6xl px-5 sm:px-8 grid md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-ng-border/50">
           <div className="py-24 md:py-32 md:pr-16 flex flex-col justify-center">
-            <p className="font-mono text-sm text-ng-orange tracking-widest uppercase mb-8">AI Anomaly Detection</p>
+            <p className="font-mono text-sm text-ng-orange tracking-widest uppercase mb-8 ml-1">AI Anomaly Detection</p>
             <h2 className="font-display font-medium text-3xl md:text-4xl lg:text-5xl leading-tight mb-8">
               We analyze baseline routines to proactively flag risks.
             </h2>
@@ -116,7 +116,7 @@ export default function Security() {
 
       {/* 2. Secondary Features Grid */}
       <section id="mechanics" className="mx-auto max-w-6xl px-5 sm:px-8 py-24 md:py-32 scroll-mt-24">
-        <p className="font-mono text-sm text-ng-orange tracking-widest uppercase mb-8 text-center md:text-left">Core Mechanics</p>
+        <p className="font-mono text-sm text-ng-orange tracking-widest uppercase mb-8 text-center md:text-left ml-1">Core Mechanics</p>
         
         <div className="grid md:grid-cols-2 gap-6 mb-32">
           {sections.slice(1, 3).map((s, i) => (
@@ -140,7 +140,7 @@ export default function Security() {
         {/* 3. Role-Based Access Control Grid */}
         <div id="architecture" className="border-t border-ng-border/50 pt-24 md:pt-32 scroll-mt-24">
           <div className="text-center md:text-left mb-16">
-            <p className="font-mono text-sm text-ng-orange tracking-widest uppercase mb-8">Architecture</p>
+            <p className="font-mono text-sm text-ng-orange tracking-widest uppercase mb-8 ml-1">Architecture</p>
             <h2 className="font-display font-medium text-3xl md:text-4xl lg:text-5xl tracking-tight">Role-Based Access Control</h2>
             <p className="text-ng-secondary text-base mt-4 max-w-2xl font-light">Four distinct roles, each with carefully scoped permissions.</p>
           </div>

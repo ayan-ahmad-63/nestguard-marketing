@@ -9,10 +9,6 @@ export const metadata: Metadata = {
   title: "NestGuard — Next-generation Hostel Security",
   description:
     "Real-time monitoring, AI anomaly detection, and zero friction.",
-  robots: {
-    index: false,
-    follow: false,
-  },
   openGraph: {
     title: "NestGuard — Next-generation Hostel Security",
     description:

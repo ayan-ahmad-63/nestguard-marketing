@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect, useRef } from "react";
 
-type Variant = "platform" | "security" | "hardware" | "how-it-works" | "default";
+type Variant = "platform" | "security" | "hardware" | "how-it-works" | "construction" | "docs" | "default";
 type Align = "left" | "center";
 
 const VARIANT_COLORS: Record<Variant, string> = {
@@ -9,6 +9,8 @@ const VARIANT_COLORS: Record<Variant, string> = {
   security: "#ff6b00",
   hardware: "#ff6b00",
   "how-it-works": "#ff6b00",
+  construction: "#ffb067",
+  docs: "#ffffff",
   default: "#ffffff",
 };
 
@@ -75,6 +77,21 @@ export default function HeroCanvas({ variant = "default", align = "center" }: { 
             alpha: Math.random() * 0.4 + 0.1,
           });
         }
+      } else if (variant === "construction") {
+        lines = [];
+        const numLines = window.innerWidth < 768 ? 15 : 30;
+        for (let i = 0; i < numLines; i++) {
+          lines.push({
+            x: Math.random() * canvas.width * 2 - canvas.width,
+            y: Math.random() * canvas.height * 2 - canvas.height,
+            length: Math.random() * 200 + 100,
+            speed: Math.random() * 2 + 1,
+            width: Math.random() * 8 + 2,
+            alpha: Math.random() * 0.2 + 0.05,
+          });
+        }
+      } else if (variant === "docs") {
+        lines = []; // clear any previous lines
       }
     };
 
@@ -199,6 +216,79 @@ export default function HeroCanvas({ variant = "default", align = "center" }: { 
           ctx.lineWidth = p.size;
           ctx.stroke();
         });
+      } else if (variant === "construction") {
+        // Diagonal hazard/construction beams
+        ctx.fillStyle = color;
+        lines.forEach((l) => {
+          l.x += l.speed;
+          l.y += l.speed;
+          
+          if (l.x - l.length > canvas.width || l.y - l.length > canvas.height) {
+            if (Math.random() > 0.5) {
+              l.x = Math.random() * canvas.width;
+              l.y = -l.length;
+            } else {
+              l.x = -l.length;
+              l.y = Math.random() * canvas.height;
+            }
+          }
+          
+          ctx.beginPath();
+          ctx.moveTo(l.x, l.y);
+          ctx.lineTo(l.x - l.length, l.y - l.length);
+          ctx.strokeStyle = color;
+          ctx.globalAlpha = l.alpha;
+          ctx.lineWidth = l.width;
+          ctx.stroke();
+        });
+      } else if (variant === "docs") {
+        // Perspective Tech Grid (Synthwave style)
+        const vanishingPoint = { x: canvas.width / 2, y: canvas.height * 0.25 };
+        
+        ctx.strokeStyle = color;
+        ctx.lineWidth = 1;
+        
+        // Moving horizontal lines
+        const cycle = (time * 0.8) % 1; 
+        
+        for (let i = 0; i < 35; i++) {
+          const z = i + cycle;
+          const yDist = Math.pow(1.18, z) * 10;
+          const y = vanishingPoint.y + yDist;
+          
+          if (y < canvas.height && y > vanishingPoint.y) {
+            ctx.beginPath();
+            ctx.moveTo(0, y);
+            ctx.lineTo(canvas.width, y);
+            
+            // Fade based on distance from vanishing point
+            let alpha = Math.min(0.25, (y - vanishingPoint.y) / (canvas.height * 0.4));
+            ctx.globalAlpha = Math.max(0, alpha);
+            ctx.stroke();
+          }
+        }
+        
+        // Radiating vertical lines
+        const numVLines = window.innerWidth < 768 ? 16 : 32;
+        const spacing = canvas.width / numVLines;
+        ctx.globalAlpha = 0.1;
+        for (let i = -numVLines; i <= numVLines * 2; i++) {
+          const bottomX = (i * spacing) - (canvas.width * 0.5); 
+          ctx.beginPath();
+          ctx.moveTo(vanishingPoint.x, vanishingPoint.y);
+          ctx.lineTo(vanishingPoint.x + bottomX * 4, canvas.height);
+          ctx.stroke();
+        }
+
+        // Glowing vanishing point orb
+        const gradient = ctx.createRadialGradient(vanishingPoint.x, vanishingPoint.y, 0, vanishingPoint.x, vanishingPoint.y, 250);
+        gradient.addColorStop(0, `${color}30`);
+        gradient.addColorStop(1, 'transparent');
+        ctx.fillStyle = gradient;
+        ctx.globalAlpha = 1;
+        ctx.beginPath();
+        ctx.arc(vanishingPoint.x, vanishingPoint.y, 250, 0, Math.PI * 2);
+        ctx.fill();
       }
 
       ctx.globalAlpha = 1;

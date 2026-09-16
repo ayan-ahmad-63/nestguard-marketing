@@ -14,7 +14,7 @@ export default function PageHero({
   title: React.ReactNode; 
   subtitle: React.ReactNode;
   eyebrow?: string;
-  variant?: "platform" | "security" | "hardware" | "default";
+  variant?: "platform" | "security" | "hardware" | "default" | "construction" | "docs";
   align?: "left" | "center";
   showCanvas?: boolean;
   sectionLinks?: { label: string; href: string }[];
@@ -37,11 +37,11 @@ export default function PageHero({
                }} />
         )}
 
-        {eyebrow && (
-          <p className="font-mono text-sm text-ng-orange tracking-widest uppercase mb-8 relative z-10">
-            {eyebrow}
-          </p>
-        )}
+          {eyebrow && (
+            <p className={`font-mono text-sm md:text-base text-ng-orange tracking-widest uppercase mb-6 md:mb-8 relative z-10 ${align === 'center' ? '' : 'ml-1'}`}>
+              {eyebrow}
+            </p>
+          )}
         <h1 className="font-display font-medium leading-[1.05] tracking-tight text-[40px] sm:text-[56px] md:text-[72px] max-w-5xl relative z-10 mb-8">
           {title}
         </h1>

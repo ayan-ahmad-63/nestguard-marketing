@@ -14,12 +14,12 @@ export default function StatusPage() {
   return (
     <MarketingShell>
       <section className="mx-auto max-w-7xl px-5 sm:px-8 pt-40 md:pt-52 pb-32">
-        <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-start">
+        <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
           
           {/* Left Side - Hero Text */}
-          <div className="flex flex-col gap-12 lg:sticky lg:top-32">
+          <div className="flex flex-col gap-12">
             <div>
-              <p className="font-mono text-sm text-ng-orange tracking-widest uppercase mb-8 relative z-10">
+              <p className="font-mono text-sm text-ng-orange tracking-widest uppercase mb-8 relative z-10 ml-1">
                 Status
               </p>
               <h1 className="font-display font-medium leading-[1.1] tracking-tight text-5xl sm:text-6xl md:text-7xl max-w-xl mb-6">
@@ -49,7 +49,19 @@ export default function StatusPage() {
           <div className="relative">
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-ng-orange/5 blur-[120px] rounded-full pointer-events-none" />
             
-            <div className="relative z-10 rounded-[2.5rem] border border-ng-border overflow-hidden bg-ng-panel shadow-2xl backdrop-blur-2xl">
+            <div className="relative z-10 rounded-[2.5rem] border border-ng-border overflow-hidden bg-ng-panel shadow-2xl backdrop-blur-2xl flex flex-col">
+              {/* Mac-like Window Chrome */}
+              <div className="h-14 border-b border-ng-border bg-ng-panel/80 flex items-center px-6 gap-2 shrink-0">
+                <div className="flex gap-2">
+                  <div className="w-3.5 h-3.5 rounded-full bg-[#FF5F56]" />
+                  <div className="w-3.5 h-3.5 rounded-full bg-[#FFBD2E]" />
+                  <div className="w-3.5 h-3.5 rounded-full bg-[#27C93F]" />
+                </div>
+                <div className="absolute left-1/2 -translate-x-1/2 font-mono text-[11px] text-ng-muted tracking-widest uppercase">
+                  status.nestguard.live
+                </div>
+              </div>
+              <div className="flex flex-col">
               {services.map((s, i) => (
                 <div key={s.name} className={`flex flex-col sm:flex-row items-center sm:justify-between p-6 md:p-8 ${i < services.length - 1 ? "border-b border-ng-border" : ""} hover:bg-white/[0.02] transition-colors gap-4`}>
                   <span className="font-display text-lg font-medium">{s.name}</span>
@@ -59,6 +71,7 @@ export default function StatusPage() {
                   </div>
                 </div>
               ))}
+              </div>
             </div>
           </div>
 

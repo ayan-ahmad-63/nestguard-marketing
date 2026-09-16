@@ -16,21 +16,36 @@ export default function DocsPage() {
         }
         subtitle="Complete technical documentation for the NestGuard platform."
         showCanvas={true}
-        variant="default"
+        variant="docs"
       />
 
-      <section className="mx-auto max-w-6xl px-5 sm:px-8 py-24 md:py-32 scroll-mt-24">
-        <div className="grid md:grid-cols-[1fr_2.5fr] gap-12 items-start">
+      <section className="mx-auto max-w-7xl px-5 sm:px-8 pt-24 md:pt-32 pb-32">
+        <div className="rounded-[2.5rem] border border-ng-border bg-ng-panel/30 backdrop-blur-xl shadow-2xl overflow-hidden h-[80vh] flex flex-col relative z-20">
+          {/* Mac-like Window Chrome */}
+          <div className="h-14 border-b border-ng-border bg-ng-panel/80 flex items-center px-6 gap-2 shrink-0 sticky top-0 z-30 backdrop-blur-xl">
+            <div className="flex gap-2">
+              <div className="w-3.5 h-3.5 rounded-full bg-[#FF5F56]" />
+              <div className="w-3.5 h-3.5 rounded-full bg-[#FFBD2E]" />
+              <div className="w-3.5 h-3.5 rounded-full bg-[#27C93F]" />
+            </div>
+            <div className="absolute left-1/2 -translate-x-1/2 font-mono text-[11px] text-ng-muted tracking-widest uppercase">
+              docs.nestguard.live
+            </div>
+          </div>
           
-          {/* Sidebar */}
-          <div className="hidden md:flex flex-col gap-4 sticky top-32">
+          {/* Scrollable Area */}
+          <div className="flex-1 overflow-y-auto p-8 md:p-12 relative" style={{ scrollbarWidth: 'thin' }}>
+            <div className="grid md:grid-cols-[200px_1fr] lg:grid-cols-[250px_1fr] gap-12 items-start min-h-full">
+              
+              {/* Sidebar */}
+              <div className="hidden md:flex flex-col gap-4 sticky top-0 pt-2">
             <h3 className="font-display font-medium text-lg mb-2">Contents</h3>
             <div className="flex flex-col gap-3 text-sm font-light text-ng-secondary">
               <a href="#overview" className="hover:text-ng-orange transition-colors">Overview</a>
               <a href="#architecture" className="hover:text-ng-orange transition-colors">Architecture</a>
               <a href="#tech-stack" className="hover:text-ng-orange transition-colors">Technology Stack</a>
               <a href="#roles" className="hover:text-ng-orange transition-colors">User Roles</a>
-              <a href="#getting-started" className="hover:text-ng-orange transition-colors">Getting Started</a>
+
             </div>
           </div>
 
@@ -95,17 +110,11 @@ export default function DocsPage() {
               </p>
             </div>
 
-            <div id="getting-started" className="scroll-mt-32">
-              <h2 className="font-display font-medium text-3xl md:text-4xl lg:text-5xl tracking-tight leading-[1.1] mb-6">Getting Started</h2>
-              <div className="rounded-2xl bg-black/40 border border-ng-border p-6 font-mono text-sm shadow-inner overflow-x-auto">
-                <div className="text-ng-muted mb-2"># Clone and install</div>
-                <div className="text-emerald-400 mb-1">$ <span className="text-white">git clone https://github.com/your-org/nestguard.git</span></div>
-                <div className="text-emerald-400 mb-4">$ <span className="text-white">cd nestguard-frontend && npm install</span></div>
-                <div className="text-ng-muted mb-2"># Run the development server</div>
-                <div className="text-emerald-400">$ <span className="text-white">npm run dev</span></div>
-              </div>
+
+            
             </div>
             
+          </div>
           </div>
         </div>
       </section>

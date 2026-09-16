@@ -65,7 +65,7 @@ export default function HardwarePage() {
       <section id="biometric-core" className="border-y border-ng-border/50 bg-ng-panel/30 scroll-mt-24">
         <div className="mx-auto max-w-6xl px-5 sm:px-8 grid md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-ng-border/50">
           <div className="py-20 md:py-32 md:pr-16 flex flex-col justify-center">
-            <p className="font-mono text-sm text-ng-orange tracking-widest uppercase mb-6">Biometric Core</p>
+            <p className="font-mono text-sm text-ng-orange tracking-widest uppercase mb-6 ml-1">Biometric Core</p>
             <h2 className="font-display font-medium text-2xl md:text-3xl lg:text-4xl leading-tight mb-8">
               {sections[0].title}
             </h2>
@@ -102,7 +102,7 @@ export default function HardwarePage() {
 
       {/* 2. Hardware Architecture Grid */}
       <section id="architecture" className="mx-auto max-w-6xl px-5 sm:px-8 pt-32 pb-32 scroll-mt-24">
-        <p className="font-mono text-sm text-ng-orange tracking-widest uppercase mb-12 text-center md:text-left">Architecture</p>
+        <p className="font-mono text-sm text-ng-orange tracking-widest uppercase mb-12 text-center md:text-left ml-1">Architecture</p>
         
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-32">
           {sections.slice(1).map((s, i) => (

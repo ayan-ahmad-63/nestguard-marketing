@@ -6,11 +6,11 @@ export default function ContactPage() {
   return (
     <MarketingShell>
       <section className="mx-auto max-w-7xl px-5 sm:px-8 pt-40 pb-32">
-        <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-start">
+        <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
           {/* Left Side - Info & Cards */}
           <div className="flex flex-col gap-16">
             <div>
-              <p className="font-mono text-sm text-ng-orange tracking-widest uppercase mb-8 relative z-10">
+              <p className="font-mono text-sm text-ng-orange tracking-widest uppercase mb-8 relative z-10 ml-1">
                 Contact
               </p>
               <h1 className="font-display font-medium leading-[1.05] tracking-tight text-[40px] sm:text-[56px] md:text-[72px] max-w-xl mb-6">
@@ -36,16 +36,7 @@ export default function ContactPage() {
                 </div>
               </div>
               
-              <div className="rounded-[2rem] border border-ng-border bg-ng-panel p-8 shadow-sm flex flex-col items-start gap-4 hover:border-ng-orange/50 transition-colors group">
-                <div className="w-12 h-12 rounded-xl bg-ng-elevated border border-ng-border flex items-center justify-center text-ng-orange group-hover:scale-110 transition-transform">
-                  <Icon path={icons.shield} size={24} />
-                </div>
-                <div>
-                  <h3 className="font-display font-medium text-lg mb-1">Support</h3>
-                  <p className="text-sm text-ng-secondary mb-3">For existing clients</p>
-                  <a href="mailto:support@nestguard.live" className="text-sm font-semibold hover:text-ng-orange transition-colors">support@nestguard.live</a>
-                </div>
-              </div>
+
             </div>
           </div>
 
@@ -53,7 +44,19 @@ export default function ContactPage() {
           <div className="relative">
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-ng-orange/5 blur-[120px] rounded-full pointer-events-none" />
             
-            <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" className="relative z-10 rounded-[2.5rem] border border-ng-border bg-ng-panel/50 backdrop-blur-2xl p-8 sm:p-12 flex flex-col gap-6 shadow-2xl">
+            <div className="relative z-10 rounded-[2.5rem] border border-ng-border bg-ng-panel/50 backdrop-blur-2xl flex flex-col overflow-hidden shadow-2xl">
+              {/* Mac-like Window Chrome */}
+              <div className="h-14 border-b border-ng-border bg-ng-panel/80 flex items-center px-6 gap-2 shrink-0">
+                <div className="flex gap-2">
+                  <div className="w-3.5 h-3.5 rounded-full bg-[#FF5F56]" />
+                  <div className="w-3.5 h-3.5 rounded-full bg-[#FFBD2E]" />
+                  <div className="w-3.5 h-3.5 rounded-full bg-[#27C93F]" />
+                </div>
+                <div className="absolute left-1/2 -translate-x-1/2 font-mono text-[11px] text-ng-muted tracking-widest uppercase">
+                  New Message
+                </div>
+              </div>
+              <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" className="p-8 sm:p-12 flex flex-col gap-6">
               
               <div className="grid sm:grid-cols-2 gap-6">
                 <div>
@@ -108,6 +111,7 @@ export default function ContactPage() {
                 </p>
               </div>
             </form>
+            </div>
           </div>
         </div>
       </section>
