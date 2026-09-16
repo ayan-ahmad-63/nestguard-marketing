@@ -73,19 +73,19 @@ export default function Security() {
       {/* 1. Primary Feature Block: AI */}
       <section id="anomaly-detection" className="border-y border-ng-border/50 bg-ng-panel/30 scroll-mt-24">
         <div className="mx-auto max-w-6xl px-5 sm:px-8 grid md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-ng-border/50">
-          <div className="py-20 md:py-32 md:pr-16 flex flex-col justify-center">
-            <p className="font-mono text-sm text-ng-orange tracking-widest uppercase mb-6">AI Anomaly Detection</p>
-            <h2 className="font-display font-medium text-2xl md:text-3xl lg:text-4xl leading-tight mb-8">
+          <div className="py-24 md:py-32 md:pr-16 flex flex-col justify-center">
+            <p className="font-mono text-sm text-ng-orange tracking-widest uppercase mb-8">AI Anomaly Detection</p>
+            <h2 className="font-display font-medium text-3xl md:text-4xl lg:text-5xl leading-tight mb-8">
               We analyze baseline routines to proactively flag risks.
             </h2>
             <div className="flex flex-col gap-4">
               {sections[0].paragraphs.map((p, j) => (
-                <p key={j} className="text-ng-secondary text-lg leading-relaxed font-light">{p}</p>
+                <p key={j} className="text-ng-secondary text-base leading-relaxed font-light">{p}</p>
               ))}
             </div>
           </div>
           
-          <div className="py-20 md:py-32 md:pl-16 flex flex-col justify-center">
+          <div className="py-24 md:py-32 md:pl-16 flex flex-col justify-center">
             {/* Abstract UI representation of AI tracking */}
             <div className="w-full rounded-2xl border border-ng-border bg-ng-panel/80 p-8 shadow-2xl relative overflow-hidden group hover:border-ng-orange/50 transition-colors duration-500">
               <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(255,107,0,0.05)_0%,transparent_70%)] opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
@@ -115,8 +115,8 @@ export default function Security() {
       </section>
 
       {/* 2. Secondary Features Grid */}
-      <section id="mechanics" className="mx-auto max-w-6xl px-5 sm:px-8 pt-32 pb-32 scroll-mt-24">
-        <p className="font-mono text-sm text-ng-orange tracking-widest uppercase mb-12 text-center md:text-left">Core Mechanics</p>
+      <section id="mechanics" className="mx-auto max-w-6xl px-5 sm:px-8 py-24 md:py-32 scroll-mt-24">
+        <p className="font-mono text-sm text-ng-orange tracking-widest uppercase mb-8 text-center md:text-left">Core Mechanics</p>
         
         <div className="grid md:grid-cols-2 gap-6 mb-32">
           {sections.slice(1, 3).map((s, i) => (
@@ -138,11 +138,11 @@ export default function Security() {
         </div>
 
         {/* 3. Role-Based Access Control Grid */}
-        <div id="architecture" className="border-t border-ng-border/50 pt-32 scroll-mt-24">
+        <div id="architecture" className="border-t border-ng-border/50 pt-24 md:pt-32 scroll-mt-24">
           <div className="text-center md:text-left mb-16">
-            <p className="font-mono text-sm text-ng-orange tracking-widest uppercase mb-4">Architecture</p>
-            <h2 className="font-display font-medium text-3xl md:text-4xl tracking-tight">Role-Based Access Control</h2>
-            <p className="text-ng-secondary text-lg mt-4 max-w-2xl font-light">Four distinct roles, each with carefully scoped permissions.</p>
+            <p className="font-mono text-sm text-ng-orange tracking-widest uppercase mb-8">Architecture</p>
+            <h2 className="font-display font-medium text-3xl md:text-4xl lg:text-5xl tracking-tight">Role-Based Access Control</h2>
+            <p className="text-ng-secondary text-base mt-4 max-w-2xl font-light">Four distinct roles, each with carefully scoped permissions.</p>
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">

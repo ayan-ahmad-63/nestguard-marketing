@@ -71,9 +71,9 @@ export default function AboutPage() {
       </section>
 
       {/* 2. "Why We Built This" - Structured Layout */}
-      <section id="problem" className="mx-auto max-w-6xl px-5 sm:px-8 py-32 border-t border-ng-border/50 scroll-mt-24">
+      <section id="problem" className="mx-auto max-w-6xl px-5 sm:px-8 py-24 md:py-32 border-t border-ng-border/50 scroll-mt-24">
         <div className="grid lg:grid-cols-[1.5fr_2fr] gap-16 lg:gap-24 items-start">
-          <h2 className="font-display font-medium text-4xl md:text-5xl tracking-tight leading-[1.1] lg:sticky lg:top-32">
+          <h2 className="font-display font-medium text-3xl md:text-4xl lg:text-5xl tracking-tight leading-[1.1] lg:sticky lg:top-32">
             The end of <br />
             <em className="font-serif italic font-light text-ng-secondary">manual</em> gatekeeping.
           </h2>
@@ -109,8 +109,8 @@ export default function AboutPage() {
       </section>
 
       {/* 3. The Team Section - Editorial Cards */}
-      <section id="team" className="mx-auto max-w-6xl px-5 sm:px-8 py-32 border-t border-ng-border/50">
-        <h2 className="font-display font-medium text-4xl md:text-5xl tracking-tight leading-[1.1] mb-20">
+      <section id="team" className="mx-auto max-w-6xl px-5 sm:px-8 py-24 md:py-32 border-t border-ng-border/50">
+        <h2 className="font-display font-medium text-3xl md:text-4xl lg:text-5xl tracking-tight leading-[1.1] mb-20">
           The minds <br />
           <em className="font-serif italic font-light text-ng-secondary">behind</em> NestGuard.
         </h2>
@@ -143,7 +143,7 @@ export default function AboutPage() {
       </section>
 
       {/* 4. Supervisor & Affiliation */}
-      <section className="mx-auto max-w-6xl px-5 sm:px-8 py-32 border-t border-ng-border/50">
+      <section className="mx-auto max-w-6xl px-5 sm:px-8 py-24 md:py-32 border-t border-ng-border/50">
         <div className="grid md:grid-cols-2 gap-8 h-full">
           {/* Supervisor Card */}
           <div className="w-full rounded-[2rem] border border-ng-border bg-ng-panel p-10 md:p-14 flex flex-col justify-between min-h-[300px] relative overflow-hidden group hover:border-ng-orange/30 transition-colors">

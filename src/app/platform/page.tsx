@@ -55,17 +55,17 @@ export default function PlatformPage() {
       {/* 1. Primary Feature Block */}
       <section id="dashboard" className="border-y border-ng-border/50 bg-ng-panel/30 scroll-mt-24">
         <div className="mx-auto max-w-6xl px-5 sm:px-8 grid md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-ng-border/50">
-          <div className="py-20 md:py-32 md:pr-16 flex flex-col justify-center">
-            <p className="font-mono text-sm text-ng-orange tracking-widest uppercase mb-6">Centralized Dashboard</p>
-            <h2 className="font-display font-medium text-2xl md:text-3xl lg:text-4xl leading-tight mb-8">
+          <div className="py-24 md:py-32 md:pr-16 flex flex-col justify-center">
+            <p className="font-mono text-sm text-ng-orange tracking-widest uppercase mb-8">Centralized Dashboard</p>
+            <h2 className="font-display font-medium text-3xl md:text-4xl lg:text-5xl leading-tight mb-8">
               A single pane of glass for every gate on campus.
             </h2>
-            <p className="text-ng-secondary text-lg leading-relaxed font-light">
+            <p className="text-ng-secondary text-base leading-relaxed font-light">
               The live access feed shows real-time entry and exit events as they happen. Gate status, occupancy counts, and critical alerts are all visible at a glance — no page refreshes, no manual checks.
             </p>
           </div>
           
-          <div className="py-20 md:py-32 md:pl-16 flex items-center justify-center">
+          <div className="py-24 md:py-32 md:pl-16 flex items-center justify-center">
             {/* Dashboard Mockup Panel */}
             <div className="w-full rounded-2xl border border-ng-border bg-ng-panel/80 p-6 shadow-2xl relative overflow-hidden group hover:border-ng-orange/50 transition-colors duration-500">
               <div className="absolute top-0 right-0 w-48 h-48 bg-ng-orange/10 blur-[80px] rounded-full pointer-events-none group-hover:bg-ng-orange/20 transition-colors duration-500" />
@@ -93,11 +93,11 @@ export default function PlatformPage() {
 
       {/* 2. Platform Capabilities Grid */}
       <section id="capabilities" className="mx-auto max-w-6xl px-5 sm:px-8 pt-32 pb-32 scroll-mt-24">
-        <p className="font-mono text-sm text-ng-orange tracking-widest uppercase mb-12 text-center md:text-left">Core Capabilities</p>
+        <p className="font-mono text-sm text-ng-orange tracking-widest uppercase mb-8 text-center md:text-left">Core Capabilities</p>
         
         <div className="grid md:grid-cols-2 gap-6">
           {features.slice(1).map((f, i) => (
-            <div key={i} className="group relative bg-ng-panel/30 border border-ng-border rounded-2xl p-8 md:p-10 hover:border-ng-orange/50 transition-colors duration-500 overflow-hidden">
+            <div key={i} className="group relative bg-ng-panel/30 border border-ng-border rounded-2xl p-8 md:p-10 hover:border-ng-orange/30 hover:shadow-[0_0_20px_rgba(255,107,0,0.1)] hover:-translate-y-1 transition-all duration-500 overflow-hidden">
               {/* Subtle hover gradient */}
               <div className="absolute inset-0 bg-gradient-to-br from-ng-orange/0 to-ng-orange/0 group-hover:from-ng-orange/5 group-hover:to-transparent transition-colors duration-700 pointer-events-none" />
               

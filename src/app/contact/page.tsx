@@ -13,20 +13,20 @@ export default function ContactPage() {
               <p className="font-mono text-sm text-ng-orange tracking-widest uppercase mb-8 relative z-10">
                 Contact
               </p>
-              <h1 className="font-display font-medium leading-[1.1] tracking-tight text-5xl sm:text-6xl md:text-7xl max-w-xl mb-6">
+              <h1 className="font-display font-medium leading-[1.05] tracking-tight text-[40px] sm:text-[56px] md:text-[72px] max-w-xl mb-6">
                 Let's upgrade your <br/>
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-ng-orange to-amber-500">
                   security.
                 </span>
               </h1>
-              <p className="font-body text-ng-secondary text-lg md:text-xl leading-relaxed max-w-md">
+              <p className="text-ng-secondary text-[16px] md:text-[20px] leading-relaxed font-light max-w-md">
                 Whether you have technical questions, need a custom deployment plan, or just want to see a live demo, our team is ready to help.
               </p>
             </div>
 
             <div className="grid sm:grid-cols-2 gap-6">
               <div className="rounded-[2rem] border border-ng-border bg-ng-panel p-8 shadow-sm flex flex-col items-start gap-4 hover:border-ng-orange/50 transition-colors group">
-                <div className="w-12 h-12 rounded-2xl bg-ng-elevated border border-ng-border flex items-center justify-center text-ng-orange group-hover:scale-110 transition-transform">
+                <div className="w-12 h-12 rounded-xl bg-ng-elevated border border-ng-border flex items-center justify-center text-ng-orange group-hover:scale-110 transition-transform">
                   <Icon path={icons.mail} size={24} />
                 </div>
                 <div>
@@ -37,7 +37,7 @@ export default function ContactPage() {
               </div>
               
               <div className="rounded-[2rem] border border-ng-border bg-ng-panel p-8 shadow-sm flex flex-col items-start gap-4 hover:border-ng-orange/50 transition-colors group">
-                <div className="w-12 h-12 rounded-2xl bg-ng-elevated border border-ng-border flex items-center justify-center text-ng-orange group-hover:scale-110 transition-transform">
+                <div className="w-12 h-12 rounded-xl bg-ng-elevated border border-ng-border flex items-center justify-center text-ng-orange group-hover:scale-110 transition-transform">
                   <Icon path={icons.shield} size={24} />
                 </div>
                 <div>
