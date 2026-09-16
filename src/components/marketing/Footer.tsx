@@ -5,7 +5,7 @@ import Image from "next/image";
 
 export default function Footer() {
   return (
-    <footer className="border-t border-ng-border bg-ng-panel/80 backdrop-blur-xl">
+    <footer className="relative z-20 border-t border-ng-border bg-ng-panel/80 backdrop-blur-xl">
       <div className="mx-auto max-w-6xl px-5 sm:px-8 py-16 grid md:grid-cols-5 gap-10">
         {/* Logo + tagline */}
         <div className="md:col-span-2">
