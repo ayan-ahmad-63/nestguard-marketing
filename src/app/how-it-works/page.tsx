@@ -46,44 +46,44 @@ const steps = [
 export default function HowItWorksPage() {
   return (
     <MarketingShell>
-      {/* Locked Fullscreen View */}
-      <div className="relative h-screen w-full overflow-hidden bg-ng-bg">
+      {/* Locked Fullscreen View on Desktop, Normal flow on Mobile */}
+      <div className="relative w-full bg-ng-bg lg:h-screen lg:overflow-hidden">
         
-        {/* Full-height canvas background */}
-        <div className="absolute inset-0 z-0">
+        {/* Canvas background */}
+        <div className="absolute inset-0 z-0 h-[100vh] lg:fixed">
           <HeroCanvas variant="how-it-works" />
         </div>
 
-        <div className="relative z-10 mx-auto max-w-7xl px-5 sm:px-8 h-full pt-24 md:pt-32">
-          <div className="grid lg:grid-cols-[1fr_1.5fr] gap-8 lg:gap-24 h-full w-full">
+        <div className="relative z-10 mx-auto max-w-7xl px-5 sm:px-8 lg:h-full pt-32 lg:pt-32">
+          <div className="grid lg:grid-cols-[1fr_1.5fr] gap-12 lg:gap-24 w-full lg:h-full">
             
             {/* Left Side: Static Hero Content */}
-            <div className="flex flex-col justify-center h-full pb-32 lg:pb-0">
-                <p className="font-mono text-sm text-ng-orange tracking-widest uppercase mb-8 relative z-10">
+            <div className="flex flex-col justify-start lg:justify-center lg:h-full pt-4 lg:pt-0">
+                <p className="font-mono text-sm text-ng-orange tracking-widest uppercase mb-6 lg:mb-8 relative z-10">
                   How It Works
                 </p>
-                <h1 className="font-display font-medium leading-[1.05] tracking-tight text-[40px] sm:text-[56px] md:text-[72px] mb-8">
+                <h1 className="font-display font-medium leading-[1.05] tracking-tight text-[40px] sm:text-[56px] md:text-[72px] mb-6 lg:mb-8">
                   From scan to <br/>
                   <em className="font-serif italic font-light text-transparent bg-clip-text animate-text-gradient" style={{ backgroundImage: "linear-gradient(90deg, var(--color-ng-orange), #FFB067, var(--color-ng-orange-deep), var(--color-ng-orange))" }}>
                     secured.
                   </em>
                 </h1>
-              <p className="font-body text-ng-secondary text-[16px] md:text-[20px] leading-relaxed max-w-md hidden md:block">
+              <p className="font-body text-ng-secondary text-[16px] md:text-[20px] leading-relaxed max-w-md">
                 The full NestGuard pipeline — six steps, under one second, fully automated. Scroll to explore.
               </p>
             </div>
 
-            {/* Right Side: Internal Scroll Container */}
+            {/* Right Side: Internal Scroll Container on Desktop, Normal on Mobile */}
             <div 
-              className="h-full overflow-y-auto snap-y snap-mandatory pb-[30vh]"
+              className="lg:h-full lg:overflow-y-auto lg:snap-y lg:snap-mandatory pb-32 lg:pb-[30vh]"
               style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
             >
               <style dangerouslySetInnerHTML={{__html: `::-webkit-scrollbar { display: none; }`}} />
               
-              <div className="relative flex flex-col">
+              <div className="relative flex flex-col gap-6 lg:gap-0 mt-8 lg:mt-0">
 
                 {steps.map((s, i) => (
-                  <div key={i} className="relative flex flex-col md:flex-row gap-8 md:gap-16 items-stretch snap-center min-h-[60vh] lg:min-h-[80vh] py-10">
+                  <div key={i} className="relative flex flex-col md:flex-row gap-8 md:gap-16 items-stretch lg:snap-center min-h-[auto] lg:min-h-[80vh] py-6 lg:py-10">
                     {/* Step Number / Node on the line */}
                     <div className="hidden md:flex flex-col items-center justify-center shrink-0 w-16 relative z-10">
                       {/* Top connecting line */}
@@ -100,13 +100,13 @@ export default function HowItWorksPage() {
                     </div>
                     
                     {/* Content Box */}
-                    <div className="flex-1 flex flex-col justify-center bg-ng-panel/60 backdrop-blur-xl border border-ng-border/50 rounded-[2rem] p-8 lg:p-10 shadow-2xl transition-all hover:border-ng-orange/30 hover:bg-ng-panel/80">
+                    <div className="flex-1 flex flex-col justify-center bg-ng-panel/60 backdrop-blur-xl border border-ng-border/50 rounded-[2rem] p-8 lg:p-10 shadow-xl transition-all hover:border-ng-orange/30 hover:bg-ng-panel/80 w-full overflow-hidden">
                       <div className="md:hidden font-display font-medium text-ng-orange text-xl mb-4">Step {s.step}</div>
                       <div className="w-14 h-14 lg:w-16 lg:h-16 rounded-2xl bg-ng-elevated border border-ng-border flex items-center justify-center mb-6 shadow-lg" style={{ color: "#FF6B00" }}>
                         <Icon path={s.icon} size={32} />
                       </div>
-                      <h3 className="font-display font-medium text-2xl lg:text-3xl tracking-tight mb-4">{s.title}</h3>
-                      <p className="text-ng-secondary text-base lg:text-lg leading-relaxed max-w-2xl">{s.desc}</p>
+                      <h3 className="font-display font-medium text-2xl lg:text-3xl tracking-tight mb-4 break-words">{s.title}</h3>
+                      <p className="text-ng-secondary text-base lg:text-lg leading-relaxed">{s.desc}</p>
                     </div>
                   </div>
                 ))}

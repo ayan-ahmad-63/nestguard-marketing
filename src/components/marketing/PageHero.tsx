@@ -28,10 +28,12 @@ export default function PageHero({
         {showCanvas && (
           <div className="absolute top-1/2 left-0 -translate-y-1/2 w-[150%] max-w-[1200px] h-[150%] pointer-events-none z-[-1]"
                style={{ 
-                 backdropFilter: 'blur(8px)', 
-                 WebkitBackdropFilter: 'blur(8px)',
-                 maskImage: 'radial-gradient(ellipse at center left, black 20%, transparent 60%)',
-                 WebkitMaskImage: 'radial-gradient(ellipse at center left, black 20%, transparent 60%)'
+                 backdropFilter: variant === 'hardware' ? 'blur(24px)' : 'blur(12px)', 
+                 WebkitBackdropFilter: variant === 'hardware' ? 'blur(24px)' : 'blur(12px)',
+                 backgroundColor: variant === 'hardware' ? 'rgba(12, 10, 24, 0.6)' : 'rgba(12, 10, 24, 0.3)',
+                 transform: 'translateZ(0)',
+                 maskImage: variant === 'hardware' ? 'radial-gradient(ellipse at center left, black 40%, transparent 80%)' : 'radial-gradient(ellipse at center left, black 20%, transparent 70%)',
+                 WebkitMaskImage: variant === 'hardware' ? 'radial-gradient(ellipse at center left, black 40%, transparent 80%)' : 'radial-gradient(ellipse at center left, black 20%, transparent 70%)'
                }} />
         )}
 

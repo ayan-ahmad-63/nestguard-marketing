@@ -98,7 +98,7 @@ export default function Landing() {
         {/* ── 3. 3D Floating Dashboard Preview ────────────── */}
         <section className="mx-auto max-w-6xl px-5 sm:px-8 mt-20 md:mt-32 pb-40 md:pb-52" style={{ perspective: "1200px" }}>
           <div 
-            className="w-full rounded-2xl border border-ng-border/50 overflow-hidden relative"
+            className="w-full h-[450px] md:h-auto rounded-2xl border border-ng-border/50 overflow-hidden relative"
             style={{ 
               background: "var(--ng-glass)", 
               boxShadow: "var(--ng-frame-shadow)",
