@@ -9,11 +9,7 @@
  *   - Production: https://app.nestguard.live
  */
 export function getLoginUrl(): string {
-  if (process.env.NODE_ENV === "production") {
-    return "https://app.nestguard.live/login";
-  }
-  const base = process.env.NEXT_PUBLIC_APP_URL?.replace(/\/$/, "") || "http://localhost:3000";
-  return `${base}/login`;
+  return "/construction";
 }
 
 export function getAppUrl(): string {

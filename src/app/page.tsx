@@ -58,7 +58,7 @@ export default function Landing() {
           </div>
 
         {/* ── 2. Hero Section ─────────────────────────────── */}
-        <section className="relative z-10 mx-auto max-w-6xl px-5 sm:px-8 text-center flex flex-col items-center pt-40 md:pt-52">
+        <section className="relative z-10 mx-auto max-w-6xl px-5 sm:px-8 text-center flex flex-col items-center pt-40 md:pt-52 pb-40 md:pb-52">
           
           <div className="relative w-full flex flex-col items-center">
             {/* Radial Blur Behind Text */}
@@ -95,91 +95,7 @@ export default function Landing() {
           </div>
         </section>
 
-        {/* ── 3. 3D Floating Dashboard Preview ────────────── */}
-        <section className="mx-auto max-w-6xl px-5 sm:px-8 mt-20 md:mt-32 pb-40 md:pb-52" style={{ perspective: "1200px" }}>
-          <div 
-            className="w-full h-[450px] md:h-auto rounded-2xl border border-ng-border/50 overflow-hidden relative"
-            style={{ 
-              background: "var(--ng-glass)", 
-              boxShadow: "var(--ng-frame-shadow)",
-              transform: "rotateX(6deg) scale(0.98)",
-              transformOrigin: "top center",
-              transition: "transform 0.5s ease"
-            }}
-          >
-            {/* Glossy overlay and Bottom Fade */}
-            <div className="absolute inset-0 bg-gradient-to-tr from-white/5 to-transparent pointer-events-none z-20" />
-            <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-ng-bg to-transparent z-30 pointer-events-none" />
-            
-            {/* Mac-like Window Chrome */}
-            <div className="h-12 border-b border-ng-border bg-ng-panel flex items-center px-4 gap-2 relative z-10">
-              <div className="flex gap-2">
-                <div className="w-3 h-3 rounded-full bg-[#FF5F56]" />
-                <div className="w-3 h-3 rounded-full bg-[#FFBD2E]" />
-                <div className="w-3 h-3 rounded-full bg-[#27C93F]" />
-              </div>
-              <div className="absolute left-1/2 -translate-x-1/2 h-6 rounded-md bg-white/5 border border-white/5 px-4 flex items-center">
-                <span className="font-mono text-[11px] text-ng-muted">app.nestguard.live / console</span>
-              </div>
-            </div>
 
-            {/* Fake Dashboard Content */}
-            <div className="p-6 md:p-10 grid md:grid-cols-[1fr_300px] gap-6 bg-ng-bg">
-              {/* Left Column Feed */}
-              <div className="flex flex-col gap-4">
-                <div className="flex items-center justify-between mb-2">
-                  <h3 className="font-display font-medium text-lg">Real-Time Access Stream</h3>
-                  <div className="flex items-center gap-1.5">
-                    <div className="relative flex h-2 w-2 items-center justify-center">
-                      <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-500 opacity-75"></span>
-                      <span className="relative inline-flex h-2 w-2 rounded-full bg-green-500"></span>
-                    </div>
-                    <span className="font-mono text-[10px] leading-none text-green-500 font-bold mt-[1px]">LIVE NETWORK</span>
-                  </div>
-                </div>
-                {[
-                  { n: "Rahul Sharma", r: "BSE-2022-041", g: "Main Gate", s: "Verified", c: "var(--color-ng-green)" },
-                  { n: "Priya Kapoor", r: "BSE-2022-119", g: "Block A", s: "Verified", c: "var(--color-ng-green)" },
-                  { n: "UNKNOWN USER", r: "N/A", g: "Service Entry", s: "REJECTED", c: "var(--color-ng-red)" },
-                  { n: "Arun Mehta", r: "BSE-2021-088", g: "Block B", s: "Verified", c: "var(--color-ng-green)" },
-                ].map((row, i) => (
-                  <div key={i} className="flex items-center justify-between p-4 rounded-xl border border-ng-border bg-ng-elevated">
-                    <div className="flex items-center gap-4">
-                      <div className="w-10 h-10 rounded-full border flex items-center justify-center font-display font-bold text-sm" style={{ background: `${row.c}15`, borderColor: row.c, color: row.c }}>
-                        {row.n.charAt(0)}
-                      </div>
-                      <div>
-                        <div className="font-display font-medium text-sm">{row.n}</div>
-                        <div className="font-mono text-[11px] text-ng-muted">{row.r}</div>
-                      </div>
-                    </div>
-                    <div className="text-right">
-                      <div className="font-mono text-xs text-ng-secondary">{row.g}</div>
-                      <div className="font-mono text-[10px] font-bold mt-1" style={{ color: row.c }}>{row.s}</div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-              
-              {/* Right Column Stats */}
-              <div className="flex flex-col gap-6">
-                <div className="rounded-xl border border-ng-border p-5 bg-ng-elevated relative overflow-hidden">
-                  <div className="absolute top-0 right-0 w-32 h-32 bg-ng-orange/20 blur-3xl rounded-full" />
-                  <div className="font-mono text-[10px] text-ng-orange font-bold mb-4">AI ANOMALY ENGINE</div>
-                  <div className="font-display font-medium text-3xl mb-1">1 Critical</div>
-                  <div className="font-mono text-xs text-ng-secondary">Service Entry Breach Attempt</div>
-                </div>
-                <div className="rounded-xl border border-ng-border p-5 bg-ng-elevated">
-                  <div className="font-mono text-[10px] text-ng-muted font-bold mb-4">CAMPUS OCCUPANCY</div>
-                  <div className="font-display font-medium text-3xl mb-1">214<span className="text-lg text-ng-secondary">/248</span></div>
-                  <div className="w-full h-1.5 bg-ng-border rounded-full mt-4 overflow-hidden">
-                    <div className="h-full bg-ng-blue rounded-full w-[86%]" />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
         </HeroMouseGlow> {/* End Hero & Dashboard Wrapper */}
 
         {/* ── 3.5. How It Works ───────────────────────────── */}
