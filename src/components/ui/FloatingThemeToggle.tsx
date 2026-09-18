@@ -13,9 +13,11 @@ export default function FloatingThemeToggle({ className }: { className?: string 
   const toggleTheme = () => {
     if (isDark) {
       document.documentElement.classList.add("light");
+      localStorage.setItem("ng-theme", "light");
       setIsDark(false);
     } else {
       document.documentElement.classList.remove("light");
+      localStorage.setItem("ng-theme", "dark");
       setIsDark(true);
     }
   };

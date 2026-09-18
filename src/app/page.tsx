@@ -58,7 +58,7 @@ export default function Landing() {
           </div>
 
         {/* ── 2. Hero Section ─────────────────────────────── */}
-        <section className="relative z-10 mx-auto max-w-6xl px-5 sm:px-8 text-center flex flex-col items-center pt-40 md:pt-52 pb-40 md:pb-52">
+        <section className="relative z-10 mx-auto max-w-6xl px-5 sm:px-8 text-center flex flex-col items-center justify-center min-h-screen pt-20 pb-20">
           
           <div className="relative w-full flex flex-col items-center">
             {/* Radial Blur Behind Text */}
@@ -99,7 +99,7 @@ export default function Landing() {
         </HeroMouseGlow> {/* End Hero & Dashboard Wrapper */}
 
         {/* ── 3.5. How It Works ───────────────────────────── */}
-        <section className="mx-auto max-w-6xl px-5 sm:px-8 pt-8 md:pt-12 pb-20 -mt-4 md:-mt-8 relative z-20">
+        <section className="mx-auto max-w-6xl px-5 sm:px-8 py-24 relative z-20">
           <div className="text-center mb-14">
             <h2 className="font-display font-medium text-[36px] md:text-[48px] tracking-tight">How it works</h2>
             <p className="text-ng-secondary mt-4 text-lg max-w-2xl mx-auto">From scan to secured — in under a second.</p>
