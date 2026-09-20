@@ -63,6 +63,7 @@ export default function Typewriter({
       <span style={{ display: "inline-block", minWidth: "1ch" }}>
         {displayedText}
         <span 
+          className={isPaused ? "animate-pulse" : ""}
           style={{ 
             display: "inline-block", 
             width: "2px", 
@@ -70,8 +71,7 @@ export default function Typewriter({
             background: "currentColor", 
             marginLeft: "2px", 
             verticalAlign: "middle",
-            animation: isPaused ? "pulse 1s cubic-bezier(0.4, 0, 0.6, 1) infinite" : "none",
-            opacity: isPaused ? undefined : 1
+            opacity: isPaused ? undefined : 1,
           }}
         />
       </span>

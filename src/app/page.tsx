@@ -11,31 +11,14 @@ import HeroMouseGlow from "@/components/marketing/HeroMouseGlow";
    Hyper-modern, glowing, massive typography, bento grids.
    ────────────────────────────────────────────────────────────── */
 
+// Stable constant — avoids resetting the Typewriter effect on re-render
+const TYPEWRITER_WORDS = ["Real-time monitoring", "AI anomaly detection", "Zero friction"];
+
 export default function Landing() {
   const loginUrl = getLoginUrl();
 
   return (
     <MarketingShell>
-      {/* ── Inline Animations ───────────────────────────── */}
-      <style>{`
-        @keyframes text-gradient {
-          0% { background-position: 0% 50%; }
-          50% { background-position: 100% 50%; }
-          100% { background-position: 0% 50%; }
-        }
-        .animate-text-gradient {
-          animation: text-gradient 5s ease infinite;
-          background-size: 200% auto;
-        }
-        @keyframes grid-pan {
-          0% { background-position: 0px 0px; }
-          100% { background-position: 0px 32px; }
-        }
-        .animate-grid-pan {
-          animation: grid-pan 9s linear infinite;
-        }
-      `}</style>
-
         {/* Hero & Dashboard Wrapper (Constrains Canvas) */}
         <HeroMouseGlow>
           
@@ -79,12 +62,12 @@ export default function Landing() {
                 className="text-transparent bg-clip-text animate-text-gradient" 
                 style={{ backgroundImage: "linear-gradient(90deg, var(--color-ng-orange), #FFB067, var(--color-ng-orange-deep), var(--color-ng-orange))" }}
               >
-                who’s inside
+                who's inside
               </span>.
             </h1>
             
             <div className="mt-8 text-[16px] md:text-[20px] leading-relaxed text-ng-secondary max-w-2xl font-light relative z-10 mx-auto h-[1.5em]">
-              <Typewriter words={["Real-time monitoring", "AI anomaly detection", "Zero friction"]} speed={40} eraseSpeed={30} delay={600} pause={2000} />
+              <Typewriter words={TYPEWRITER_WORDS} speed={40} eraseSpeed={30} delay={600} pause={2000} />
             </div>
           </div>
           
@@ -112,7 +95,7 @@ export default function Landing() {
             ].map((item) => (
               <div key={item.step} className="ng-card rounded-3xl border border-ng-border p-8 bg-ng-panel flex flex-col items-start gap-4 group">
                 <div className="font-mono text-[11px] text-ng-orange font-bold tracking-widest">{item.step}</div>
-                <div className="w-10 h-10 rounded-xl bg-ng-elevated border border-ng-border flex items-center justify-center" style={{ color: "#FF6B00" }}>
+                <div className="w-10 h-10 rounded-xl bg-ng-elevated border border-ng-border flex items-center justify-center text-ng-orange">
                   <Icon path={item.icon} size={20} />
                 </div>
                 <h3 className="font-display font-medium text-xl">{item.title}</h3>
@@ -134,7 +117,7 @@ export default function Landing() {
             <div className="ng-card rounded-3xl border border-ng-border p-8 bg-ng-panel relative overflow-hidden md:col-span-2 md:row-span-2 flex flex-col justify-between group">
               <div className="absolute -bottom-20 -right-20 w-80 h-80 bg-ng-orange/20 blur-[80px] rounded-full group-hover:bg-ng-orange/30 group-hover:scale-110 transition-all duration-700" />
               <div>
-                <div className="w-14 h-14 rounded-2xl bg-ng-elevated border border-ng-border flex items-center justify-center mb-6" style={{ color: "#FF6B00" }}>
+                <div className="w-14 h-14 rounded-2xl bg-ng-elevated border border-ng-border flex items-center justify-center mb-6 text-ng-orange">
                   <Icon path={icons.brain} size={32} />
                 </div>
                 <h3 className="font-display font-medium text-3xl mb-3">Predictive Anomaly AI</h3>
@@ -163,7 +146,7 @@ export default function Landing() {
                 <Icon path={icons.finger} size={280} strokeWidth={0.5} />
               </div>
               <div className="relative z-10">
-                <div className="w-10 h-10 rounded-xl bg-ng-elevated border border-ng-border flex items-center justify-center mb-4" style={{ color: "#FF6B00" }}>
+                <div className="w-10 h-10 rounded-xl bg-ng-elevated border border-ng-border flex items-center justify-center mb-4 text-ng-orange">
                   <Icon path={icons.scan} size={20} />
                 </div>
                 <h3 className="font-display font-medium text-2xl mb-2">Zero Trust Biometrics</h3>
@@ -175,7 +158,7 @@ export default function Landing() {
             {/* Live Telemetry */}
             <div className="ng-card rounded-3xl border border-ng-border p-8 bg-ng-panel flex flex-col justify-between group">
               <div>
-                <div className="w-10 h-10 rounded-xl bg-ng-elevated border border-ng-border flex items-center justify-center mb-4" style={{ color: "#FF6B00" }}>
+                <div className="w-10 h-10 rounded-xl bg-ng-elevated border border-ng-border flex items-center justify-center mb-4 text-ng-orange">
                   <Icon path={icons.bolt} size={20} />
                 </div>
                 <h3 className="font-display font-medium text-xl mb-2">Instant Sync</h3>
@@ -185,17 +168,17 @@ export default function Landing() {
             </div>
 
             {/* Immutable Logs */}
-            <div className="ng-card rounded-3xl border border-ng-border p-8 bg-ng-panel flex flex-col justify-between group">
+            <div className='ng-card rounded-3xl border border-ng-border p-8 bg-ng-panel flex flex-col justify-between group'>
               <div>
-                <div className="w-10 h-10 rounded-xl bg-ng-elevated border border-ng-border flex items-center justify-center mb-4" style={{ color: "#FF6B00" }}>
+                <div className='w-10 h-10 rounded-xl bg-ng-elevated border border-ng-border flex items-center justify-center mb-4 text-ng-orange'>
                   <Icon path={icons.lock} size={20} />
                 </div>
-                <h3 className="font-display font-medium text-xl mb-2">Immutable Audit</h3>
-                <p className="text-ng-secondary text-sm">Every access event is permanently logged and cannot be edited or deleted after the fact. Tamper-proof history.</p>
+                <h3 className='font-display font-medium text-xl mb-2'>Immutable Audit</h3>
+                <p className='text-ng-secondary text-sm'>Every access event is permanently logged and cannot be edited or deleted after the fact. Tamper-proof history.</p>
               </div>
-              <div className="mt-4 flex items-center gap-2">
+              <div className='mt-4 flex items-center gap-2'>
                 <Icon path={icons.shield} size={16} />
-                <span className="font-mono text-[10px] text-ng-muted uppercase tracking-widest">Write-once ledger</span>
+                <span className='font-mono text-[10px] text-ng-muted uppercase tracking-widest'>Write-once ledger</span>
               </div>
             </div>
 

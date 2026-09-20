@@ -48,7 +48,7 @@ export function PrimaryBtn({ onClick, href, children, size = "md" }: { onClick?:
     </div>
   );
   if (href) {
-    return <a href={href}>{inner}</a>;
+    return <a href={href} rel="noopener noreferrer">{inner}</a>;
   }
   return <button onClick={onClick} className="cursor-pointer">{inner}</button>;
 }
@@ -62,6 +62,6 @@ export function SecondaryBtn({ onClick, href, children }: { onClick?: () => void
       {children}
     </span>
   );
-  if (href) return <a href={href}>{inner}</a>;
+  if (href) return <a href={href} rel="noopener noreferrer">{inner}</a>;
   return <button onClick={onClick} className="cursor-pointer">{inner}</button>;
 }

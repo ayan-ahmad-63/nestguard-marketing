@@ -4,6 +4,14 @@ import React, { useEffect, useRef } from "react";
 type Variant = "platform" | "security" | "hardware" | "how-it-works" | "construction" | "docs" | "default";
 type Align = "left" | "center";
 
+// Canvas animation uses any[] intentionally — each variant populates distinct field shapes
+// that are guarded at runtime. Strict typing would require per-variant discriminated unions
+// with excessive type casting throughout the draw loop.
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+type CanvasParticle = Record<string, any>;
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+type CanvasLine = Record<string, any>;
+
 const VARIANT_COLORS: Record<Variant, string> = {
   platform: "#ff6b00",
   security: "#ff6b00",
@@ -27,8 +35,8 @@ export default function HeroCanvas({ variant = "default", align = "center" }: { 
     let time = 0;
     
     // State for different animations
-    let particles: any[] = [];
-    let lines: any[] = [];
+    let particles: CanvasParticle[] = [];
+    let lines: CanvasLine[] = [];
 
     const resize = () => {
       canvas.width = window.innerWidth;

@@ -1,5 +1,6 @@
 "use client";
 
+import React from "react";
 import HeroCanvas from "./HeroCanvas";
 
 export default function PageHero({ 
@@ -30,7 +31,7 @@ export default function PageHero({
                style={{ 
                  backdropFilter: variant === 'hardware' ? 'blur(24px)' : 'blur(12px)', 
                  WebkitBackdropFilter: variant === 'hardware' ? 'blur(24px)' : 'blur(12px)',
-                 backgroundColor: variant === 'hardware' ? 'rgba(12, 10, 24, 0.6)' : 'rgba(12, 10, 24, 0.3)',
+                 backgroundColor: variant === 'hardware' ? 'color-mix(in srgb, var(--color-ng-bg) 60%, transparent)' : 'color-mix(in srgb, var(--color-ng-bg) 30%, transparent)',
                  transform: 'translateZ(0)',
                  maskImage: variant === 'hardware' ? 'radial-gradient(ellipse at center left, black 40%, transparent 80%)' : 'radial-gradient(ellipse at center left, black 20%, transparent 70%)',
                  WebkitMaskImage: variant === 'hardware' ? 'radial-gradient(ellipse at center left, black 40%, transparent 80%)' : 'radial-gradient(ellipse at center left, black 20%, transparent 70%)'
@@ -56,7 +57,7 @@ export default function PageHero({
               <a 
                 key={idx} 
                 href={link.href} 
-                className="inline-flex items-center justify-center rounded-full border border-white/20 bg-white/5 px-6 py-2.5 font-mono text-xs font-semibold text-white tracking-[0.2em] uppercase transition-all duration-300 hover:bg-white/10 hover:border-white/40 hover:scale-105 backdrop-blur-md shadow-[0_0_15px_rgba(255,255,255,0.05)] hover:shadow-[0_0_25px_rgba(255,255,255,0.15)] group"
+                className="inline-flex items-center justify-center rounded-full border border-ng-border bg-ng-elevated/50 px-6 py-2.5 font-mono text-xs font-semibold text-ng-secondary tracking-[0.2em] uppercase transition-all duration-300 hover:bg-ng-elevated hover:border-ng-border hover:scale-105 backdrop-blur-md group"
               >
                 {link.label}
               </a>

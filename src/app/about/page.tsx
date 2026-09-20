@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import MarketingShell from "@/components/marketing/MarketingShell";
 import CTABand from "@/components/marketing/CTABand";
 import { Icon, icons } from "@/components/marketing/shared";
@@ -61,9 +62,11 @@ export default function AboutPage() {
           <div className="mt-12 md:mt-0 md:absolute md:top-1/2 md:right-0 md:-translate-y-1/2 flex justify-center w-full md:w-[40%] lg:w-[40%] max-w-[350px] lg:max-w-[400px] z-0 pointer-events-none">
             {/* Glowing orb behind the image */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] h-[80%] bg-ng-orange/20 blur-[100px] rounded-full z-[-1]" />
-            <img 
+            <Image 
               src="/hero-fingerprint.png" 
               alt="3D Fingerprint Logo" 
+              width={400}
+              height={400}
               className="w-full object-contain drop-shadow-[0_20px_40px_rgba(255,107,0,0.15)] transition-transform duration-700 hover:scale-[1.03] pointer-events-auto" 
             />
           </div>

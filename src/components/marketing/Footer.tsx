@@ -19,9 +19,9 @@ export default function Footer() {
         <div>
           <p className="font-display font-medium text-sm text-ng-text mb-5">Platform</p>
           <ul className="flex flex-col gap-3">
-            <li><Link href="/security" className="text-sm text-ng-secondary hover:text-ng-text transition-colors">Security</Link></li>
-            <li><Link href="/hardware" className="text-sm text-ng-secondary hover:text-ng-text transition-colors">Hardware</Link></li>
-            <li><Link href="/how-it-works" className="text-sm text-ng-secondary hover:text-ng-text transition-colors">How It Works</Link></li>
+            <li><Link href="/security" className="text-sm text-ng-secondary hover:text-ng-text transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ng-orange focus-visible:rounded-sm">Security</Link></li>
+            <li><Link href="/hardware" className="text-sm text-ng-secondary hover:text-ng-text transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ng-orange focus-visible:rounded-sm">Hardware</Link></li>
+            <li><Link href="/how-it-works" className="text-sm text-ng-secondary hover:text-ng-text transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ng-orange focus-visible:rounded-sm">How It Works</Link></li>
           </ul>
         </div>
 
@@ -29,9 +29,9 @@ export default function Footer() {
         <div>
           <p className="font-display font-medium text-sm text-ng-text mb-5">Company</p>
           <ul className="flex flex-col gap-3">
-            <li><Link href="/about" className="text-sm text-ng-secondary hover:text-ng-text transition-colors">About</Link></li>
-            <li><Link href="/about#team" className="text-sm text-ng-secondary hover:text-ng-text transition-colors">Team</Link></li>
-            <li><Link href="/contact" className="text-sm text-ng-secondary hover:text-ng-text transition-colors">Contact</Link></li>
+            <li><Link href="/about" className="text-sm text-ng-secondary hover:text-ng-text transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ng-orange focus-visible:rounded-sm">About</Link></li>
+            <li><Link href="/about#team" className="text-sm text-ng-secondary hover:text-ng-text transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ng-orange focus-visible:rounded-sm">Team</Link></li>
+            <li><Link href="/contact" className="text-sm text-ng-secondary hover:text-ng-text transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ng-orange focus-visible:rounded-sm">Contact</Link></li>
           </ul>
         </div>
 
@@ -39,8 +39,8 @@ export default function Footer() {
         <div>
           <p className="font-display font-medium text-sm text-ng-text mb-5">Resources</p>
           <ul className="flex flex-col gap-3">
-            <li><Link href="/docs" className="text-sm text-ng-secondary hover:text-ng-text transition-colors">Documentation</Link></li>
-            <li><Link href="/status" className="text-sm text-ng-secondary hover:text-ng-text transition-colors">System Status</Link></li>
+            <li><Link href="/docs" className="text-sm text-ng-secondary hover:text-ng-text transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ng-orange focus-visible:rounded-sm">Documentation</Link></li>
+            <li><Link href="/status" className="text-sm text-ng-secondary hover:text-ng-text transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ng-orange focus-visible:rounded-sm">System Status</Link></li>
 
           </ul>
         </div>
