@@ -2,7 +2,6 @@
 import React from "react";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
-import FloatingThemeToggle from "@/components/ui/FloatingThemeToggle";
 
 export default function MarketingShell({ children }: { children: React.ReactNode }) {
   return (
@@ -14,7 +13,6 @@ export default function MarketingShell({ children }: { children: React.ReactNode
         {children}
       </main>
       <Footer />
-      <FloatingThemeToggle />
     </div>
   );
 }

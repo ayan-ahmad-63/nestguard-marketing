@@ -56,7 +56,7 @@ export default function Landing() {
 
             
             <h1 className="font-display font-medium leading-[1.05] tracking-tight text-[40px] sm:text-[56px] md:text-[72px] max-w-4xl relative z-10">
-              Hostel security <br />
+              Hostel surveillance <br />
               that actually knows <br />
               <span 
                 className="text-transparent bg-clip-text animate-text-gradient" 

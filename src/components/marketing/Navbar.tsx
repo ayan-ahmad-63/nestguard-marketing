@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import Image from "next/image";
 import { Icon, icons, PrimaryBtn } from "./shared";
 import { getLoginUrl } from "@/lib/env";
+import FloatingThemeToggle from "@/components/ui/FloatingThemeToggle";
 
 const NAV_LINKS = [
   { label: "Home", href: "/" },
@@ -66,7 +67,10 @@ export default function Navbar() {
           ))}
         </div>
 
-        <div className="flex items-center gap-5">
+        <div className="flex items-center gap-3">
+          <div className="hidden md:flex items-center">
+            <FloatingThemeToggle className="hover:scale-105 transition-transform" />
+          </div>
           <div className="hidden sm:flex items-center">
             <div className="md:mr-0 mr-5">
               <PrimaryBtn href={loginUrl}>Log in</PrimaryBtn>
@@ -92,7 +96,10 @@ export default function Navbar() {
             </Link>
           ))}
           <div className="h-px w-full bg-ng-border my-2" />
-          <PrimaryBtn href={loginUrl}>Log in to Console</PrimaryBtn>
+          <div className="flex items-center justify-between">
+            <PrimaryBtn href={loginUrl}>Log in to Console</PrimaryBtn>
+            <FloatingThemeToggle className="hover:scale-105 transition-transform" />
+          </div>
         </div>
       )}
     </header>
