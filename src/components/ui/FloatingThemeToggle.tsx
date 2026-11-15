@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 
-export default function FloatingThemeToggle({ className = "" }: { className?: string }) {
+export default function FloatingThemeToggle({ className }: { className?: string }) {
   const [isDark, setIsDark] = useState(true);
   const [mounted, setMounted] = useState(false);
 
@@ -24,6 +24,9 @@ export default function FloatingThemeToggle({ className = "" }: { className?: st
     }
   };
 
+  const isPositioned = className?.includes("relative") || className?.includes("fixed") || className?.includes("absolute");
+  const positionClass = className || "fixed bottom-6 right-6 z-50 hover:scale-105 transition-transform";
+
   return (
     <button
       type="button"
@@ -32,7 +35,7 @@ export default function FloatingThemeToggle({ className = "" }: { className?: st
       aria-label={isDark ? "Switch to light theme" : "Switch to dark theme"}
       title={isDark ? "Switch to light mode" : "Switch to dark mode"}
       onClick={toggleTheme}
-      className={`group relative inline-flex h-[28px] w-[56px] shrink-0 cursor-pointer items-center rounded-full border border-ng-border bg-ng-panel/90 p-[2px] backdrop-blur-md transition-all duration-300 hover:border-ng-orange/50 hover:shadow-[0_0_12px_rgba(255,107,0,0.18)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ng-orange focus-visible:ring-offset-2 focus-visible:ring-offset-ng-bg ${className}`}
+      className={`group ${!isPositioned ? "relative" : ""} ${positionClass} inline-flex h-[28px] w-[56px] shrink-0 cursor-pointer items-center rounded-full border border-ng-border bg-ng-panel/90 p-[2px] backdrop-blur-md transition-all duration-300 hover:border-ng-orange/50 hover:shadow-[0_0_12px_rgba(255,107,0,0.18)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ng-orange focus-visible:ring-offset-2 focus-visible:ring-offset-ng-bg`}
       style={{
         boxShadow: isDark
           ? "inset 0 1px 3px rgba(0, 0, 0, 0.4), 0 1px 2px rgba(0, 0, 0, 0.2)"

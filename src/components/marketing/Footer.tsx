@@ -11,7 +11,7 @@ export default function Footer() {
         <div className="md:col-span-2">
           <Image src="/logo-row.png" alt="NestGuard" width={892} height={264} className="h-9 w-auto shrink-0 object-contain" />
           <p className="mt-6 text-sm leading-relaxed text-ng-secondary max-w-xs">
-            Next-generation biometric access control for institutional security. Replace guesswork with verifiable, tamper-proof records.
+            Next-generation biometric access control and surveillance for institutional security. Replace guesswork with verifiable, tamper-proof records.
           </p>
         </div>
 
