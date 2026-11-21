@@ -16,5 +16,5 @@ export function getAppUrl(): string {
   if (process.env.NODE_ENV === "production") {
     return "https://app.nestguard.live";
   }
-  return process.env.NEXT_PUBLIC_APP_URL?.replace(/\/$/, "") || "http://localhost:3000";
+  return process.env.NEXT_PUBLIC_APP_URL?.replace(/\/$/, "") || "http://localhost:5000";
 }
